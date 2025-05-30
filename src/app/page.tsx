@@ -18,15 +18,15 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link href="/projects">
-              <Button size="lg" className="w-full sm:w-auto">
-                Explore Our Work <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="w-full sm:w-auto dark:hover:text-blue-700 hover:text-blue-600">
+                Explore Our Work <ArrowRight className="ml-2 h-5 w-5 " />
               </Button>
             </Link>
             <Link href="#newsletter">
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-primary text-primary hover:bg-primary/10"
+                className="w-full sm:w-auto border-primary dark:text-white text-black  dark:hover:bg-slate-900 hover:bg-slate-200"
               >
                 Join Our Newsletter
               </Button>
@@ -42,16 +42,18 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="p-6 bg-background rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <Palette size={48} className="mx-auto mb-4 text-primary" />
-              <h3 className="text-xl font-semibold mb-2 text-foreground">Graphics Design</h3>
+              <h3 className="text-xl font-semibold mb-2 text-foreground">Web & App Development</h3>
               <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-                Logos, Flyers, 2D/3D Animation, Motion Graphics. Visually stunning designs that tell your story.
+              
+                 React, Next.js, Node.js, Python, Tauri. Building robust and scalable digital experiences.
               </p>
             </div>
             <div className="p-6 bg-background rounded-lg shadow-lg hover:shadow-xl transition-shadow">
               <Zap size={48} className="mx-auto mb-4 text-primary" />
-              <h3 className="text-xl font-semibold mb-2 text-foreground">Web & App Development</h3>
+              <h3 className="text-xl font-semibold mb-2 text-foreground"> Graphics Design</h3>
               <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-                React, Next.js, Node.js, Python, Tauri. Building robust and scalable digital experiences.
+              
+                  Logos, Flyers, 2D/3D Animation, Motion Graphics. Visually stunning designs that tell your story.
               </p>
             </div>
             <div className="p-6 bg-background rounded-lg shadow-lg hover:shadow-xl transition-shadow">
