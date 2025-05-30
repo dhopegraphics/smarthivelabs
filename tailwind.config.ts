@@ -1,5 +1,4 @@
-
-import { Config  } from "tailwindcss"
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   darkMode: "class",
@@ -12,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#006fd2", // Your specified primary color
+        primary: "#006fd2",
         background: "var(--background)",
         foreground: "var(--foreground)",
         card: {

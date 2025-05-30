@@ -73,7 +73,7 @@ export default function HomePage() {
       </section>
 
       {/* Newsletter Section Anchor */}
-      <section id="newsletter" className="py-16 bg-neutral-50 dark:bg-neutral-800">
+      <section id="newsletter" className="py-16 bg-background ">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Stay Updated</h2>
           <p className="text-neutral-600 dark:text-neutral-400 mb-8 max-w-xl mx-auto">

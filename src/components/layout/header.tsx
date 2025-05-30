@@ -20,14 +20,14 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-background/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+    <header className="bg-background backdrop-blur-md sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-primary">
           Smart Hive Labs
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-slate-950 hover:text-blue-600 transition-colors">
+            <Link key={link.href} href={link.href} className="text-background hover:text-blue-500 transition-colors">
               {link.label}
             </Link>
           ))}
@@ -45,13 +45,13 @@ export default function Header() {
         </div>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background shadow-lg absolute w-full left-0 top-full">
+        <div className="md:hidden  backdrop-blur-md bg-white/90 shadow-lg absolute w-full left-0 top-full">
           <nav className="flex flex-col space-y-2 p-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="flex items-center space-x-2 text-foreground hover:text-blue-500 hover:bg p-2 rounded-md transition-colors"
+                className="flex items-center space-x-2 text-foreground hover:text-blue-500 hover:bg-primary p-2 rounded-md transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.icon}
