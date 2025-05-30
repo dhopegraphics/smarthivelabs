@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Smart Hive Labs",
   },
   description:
-    "Smart Hive Labs specializes in Graphics Design, Web Development, AI-driven solutions, and more. Owned by Mensah Isaac Nana Sam (Dhope Graphics).",
+    "Smart Hive Labs specializes in Mobile Development , Desktop Development , Web Development, Video Editing , Motion Graphics , 3D & 2D Animation , Graphics Design, AI-driven solutions, and more. Owned by Mensah Isaac Nana Sam (Dhope Graphics).",
 };
 
 export default function RootLayout({
