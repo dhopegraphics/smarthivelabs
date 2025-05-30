@@ -54,10 +54,10 @@ export default function HireUsPage() {
     <div className="py-12">
       <section className="text-center mb-12">
         <Handshake size={64} className="mx-auto mb-6 text-primary" />
-        <h1 className="text-4xl font-bold mb-4 text-foreground">Let's Build Something Amazing Together</h1>
+        <h1 className="text-4xl font-bold mb-4 text-foreground">Let&apos;s Build Something Amazing Together</h1>
         <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
           Ready to start your next project? Smart Hive Labs offers expert services to bring your ideas to life. Fill out
-          the form below, and let's discuss how we can help you achieve your goals.
+          the form below, and let&apos;s discuss how we can help you achieve your goals.
         </p>
       </section>
 
@@ -115,13 +115,14 @@ export default function HireUsPage() {
               name="service"
               value={formData.service}
               onValueChange={(value) => handleSelectChange("service", value)}
+             
             >
               <SelectTrigger>
                 <SelectValue placeholder="Select a service category" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="dark:bg-blue-950/60  bg-blue-50">
                 {serviceCategories.map((service) => (
-                  <SelectItem key={service} value={service}>
+                  <SelectItem className="hover:text-blue-700" key={service} value={service}>
                     {service}
                   </SelectItem>
                 ))}
@@ -158,7 +159,7 @@ export default function HireUsPage() {
               placeholder="e.g., $500 - $1000, or specific amount"
             />
           </div>
-          <Button type="submit" className="w-full text-lg py-3" disabled={submissionStatus === "Sending inquiry..."}>
+          <Button type="submit" className="w-full text-lg py-3 dark:hover:bg-blue-800 hover:bg-blue-600 hover:text-white" disabled={submissionStatus === "Sending inquiry..."}>
             {submissionStatus === "Sending inquiry..." ? (
               "Processing..."
             ) : (
@@ -176,17 +177,17 @@ export default function HireUsPage() {
       <section className="mt-16 text-center">
         <h3 className="text-2xl font-semibold mb-4 text-foreground">Why Partner with Smart Hive Labs?</h3>
         <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto text-neutral-600 dark:text-neutral-400">
-          <div className="bg-background p-6 rounded-lg shadow-lg">
+          <div className="bg-background  dark:hover:shadow-zinc-900 hover:shadow-blue-200  p-6 rounded-lg shadow-lg">
             <Palette size={32} className="mx-auto mb-3 text-primary" />
             <h4 className="font-semibold text-lg mb-1 text-foreground">Creative Expertise</h4>
             <p className="text-sm">Innovative designs and solutions tailored to your brand.</p>
           </div>
-          <div className="bg-background p-6 rounded-lg shadow-lg">
+          <div className="bg-background p-6 rounded-lg dark:hover:shadow-zinc-900 hover:shadow-blue-200  shadow-lg">
             <Zap size={32} className="mx-auto mb-3 text-primary" />
             <h4 className="font-semibold text-lg mb-1 text-foreground">Technical Prowess</h4>
             <p className="text-sm">Utilizing the latest technologies for robust and scalable results.</p>
           </div>
-          <div className="bg-background p-6 rounded-lg shadow-lg">
+          <div className="bg-background p-6 rounded-lg dark:hover:shadow-zinc-900 hover:shadow-blue-200  shadow-lg">
             <Cpu size={32} className="mx-auto mb-3 text-primary" />
             <h4 className="font-semibold text-lg mb-1 text-foreground">Collaborative Process</h4>
             <p className="text-sm">We work closely with you every step of the way to ensure success.</p>
