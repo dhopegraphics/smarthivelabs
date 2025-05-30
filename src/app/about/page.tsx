@@ -42,7 +42,7 @@ export default function AboutPage() {
           </div>
           <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="/placeholder.svg?width=600&height=400"
+              src="/team.jpg"
               alt="Smart Hive Labs Team Collaboration"
               layout="fill"
               objectFit="cover"
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto bg-background p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8">
           <div className="relative h-40 w-40 rounded-full overflow-hidden shadow-md flex-shrink-0">
             <Image
-              src="/placeholder.svg?width=200&height=200"
+              src="/mins.jpg"
               alt="Mensah Isaac Nana Sam - Dhope Graphics"
               layout="fill"
               objectFit="cover"
