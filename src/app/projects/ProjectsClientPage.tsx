@@ -6,13 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Github, ExternalLink, ArrowRight } from "lucide-react"
 import { useState } from "react"
 
+
 const projects = [
   {
     title: "Hivedemia - AI Study Platform",
     category: "AI & Education",
     description:
       "An AI-powered platform designed to revolutionize learning. Features include AI tutoring, quiz generation from documents/text, document Q&A, and performance tracking.",
-    imageUrl: "/placeholder.svg?width=600&height=400",
+    imageUrl: "/black-logo-white-text.webp",
     status: "Current Project",
     tags: ["AI/ML", "React", "Next.js", "Python", "EdTech"],
     githubLink: "https://github.com/smarhivelabs/hivedemia", // Placeholder
@@ -102,7 +103,7 @@ export default function ProjectsClientPage() {
         {filteredProjects.map((project) => (
           <div key={project.title} className="bg-background rounded-lg shadow-xl overflow-hidden flex flex-col">
             {project.imageUrl && (
-              <div className="relative h-64 w-full">
+              <div className="relative bg-slate-700 dark:bg-[#0a0a0a] h-50 w-full">
                 <Image
                   src={project.imageUrl || "/placeholder.svg"}
                   alt={project.title}
