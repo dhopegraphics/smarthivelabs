@@ -34,7 +34,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-colors ${isActive ? "text-primary font-semibold underline" : "text-background hover:text-blue-500"}`}
+                className={`transition-colors ${isActive ? "text-amber-300 font-semibold underline " : "bg-amber-300  text-slate-900 rounded px-2 hover:text-amber-500"}`}
               >
                 {link.label}
               </Link>
