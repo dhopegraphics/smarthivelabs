@@ -41,7 +41,7 @@ export default function OpenSourcePage() {
           open-source projects and join us in building innovative solutions.
         </p>
         <Link href="https://github.com/smarthivelabs" target="_blank" rel="noopener noreferrer">
-          <Button size="lg" className=" transition-all  duration-300 hover:bg-slate-900 hover:scale-105  hover:shadow-xl" >
+          <Button size="lg" className=" transition-all hover:text-white duration-300 hover:bg-slate-900 hover:scale-105  hover:shadow-xl" >
             <Github className="mr-2 h-5 w-5  " /> Visit our GitHub Organization
           </Button>
         </Link>
@@ -53,7 +53,7 @@ export default function OpenSourcePage() {
           {openSourceProjects.map((project) => (
             <div
               key={project.title}
-              className="bg-background p-6 rounded-lg shadow-lg hover:shadow-slate-100/20  hover:scale-105 transition-all duration-300 flex flex-col"
+              className="bg-background p-6 rounded-lg shadow-lg hover:shadow-slate-100/20   hover:scale-105 transition-all duration-300 flex flex-col"
             >
               <h3 className="text-2xl font-semibold mb-2 text-foreground">{project.title}</h3>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 flex-grow">{project.description}</p>
@@ -105,7 +105,7 @@ export default function OpenSourcePage() {
           of technology.
         </p>
         <Link href="https://github.com/smarthivelabs" target="_blank" rel="noopener noreferrer">
-          <Button size="lg" variant="default" className=" transition-all  duration-300 hover:bg-slate-900 hover:scale-105  hover:shadow-xl">
+          <Button size="lg" variant="default" className=" transition-all hover:text-white duration-300 hover:bg-slate-900 hover:scale-105  hover:shadow-xl">
             <Users className="mr-2 h-5 w-5" /> Get Involved
           </Button>
         </Link>
