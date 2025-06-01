@@ -62,7 +62,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`flex items-center space-x-2 p-2 rounded-md transition-colors ${isActive ? "bg-primary text-white font-semibold" : "text-foreground hover:text-blue-500 hover:bg-primary"}`}
+                  className={`flex items-center space-x-2 p-2 rounded-md transition-colors ${isActive ? "bg-blue-600 text-white font-semibold" : "text-foreground hover:text-blue-500 hover:bg-primary"}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.icon}
