@@ -53,7 +53,7 @@ export default function CareersClientPage() {
     <div className="py-12">
       <h1 className="text-4xl font-bold text-center mb-4 text-foreground">Careers & Internships</h1>
       <p className="text-lg text-center text-neutral-600 dark:text-neutral-400 mb-12 max-w-2xl mx-auto">
-        Join our innovative team at Smart Hive Labs! We're looking for passionate individuals to grow with us.
+        Join our innovative team at Smart Hive Labs! We&apos;re looking for passionate individuals to grow with us.
       </p>
 
       <section className="mb-16">
