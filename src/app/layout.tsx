@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/hooks/theme-provider";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: {
@@ -28,6 +29,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
