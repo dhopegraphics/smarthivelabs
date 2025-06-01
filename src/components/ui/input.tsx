@@ -1,12 +1,8 @@
-// This is a simplified custom input component.
-// In a real project, you'd typically use shadcn/ui or a similar library.
-// For Next.js, shadcn/ui components are pre-installed and can be imported from "@/components/ui".
+
 import * as React from "react"
 import { cn } from "@/lib/utils" // Assumes cn utility from shadcn/ui setup
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type, ...props }, ref) => {
+const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(({ className, type, ...props }, ref) => {
   return (
     <input
       type={type}
