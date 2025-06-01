@@ -40,15 +40,15 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Our Core Expertise</h2>
           <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="p-6 bg-background rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <div className="p-6 bg-background rounded-lg shadow-lg dark:shadow-blue-50/10 hover:shadow-xl transition-shadow">
               <Palette size={48} className="mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-semibold mb-2 text-foreground">Web & App Development</h3>
               <p className="text-neutral-600 dark:text-neutral-400 text-sm">
               
-                 React, Next.js, Node.js, Python, Tauri. Building robust and scalable digital experiences.
+                 React, React Native , Next.js, Node.js, Python, Tauri. Building robust and scalable digital experiences.
               </p>
             </div>
-            <div className="p-6 bg-background rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <div className="p-6 bg-background rounded-lg dark:shadow-blue-50/10 shadow-lg hover:shadow-xl transition-shadow">
               <Zap size={48} className="mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-semibold mb-2 text-foreground"> Graphics Design</h3>
               <p className="text-neutral-600 dark:text-neutral-400 text-sm">
@@ -56,7 +56,7 @@ export default function HomePage() {
                   Logos, Flyers, 2D/3D Animation, Motion Graphics. Visually stunning designs that tell your story.
               </p>
             </div>
-            <div className="p-6 bg-background rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <div className="p-6 bg-background rounded-lg dark:shadow-blue-50/10 shadow-lg hover:shadow-xl transition-shadow">
               <Brain size={48} className="mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-semibold mb-2 text-foreground">AI-Powered Solutions</h3>
               <p className="text-neutral-600 dark:text-neutral-400 text-sm">

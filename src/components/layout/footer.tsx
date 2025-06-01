@@ -13,9 +13,9 @@ export default function Footer() {
             <p className="text-sm italic mb-2">(Public Brand: Dhope Graphics)</p>
             <p className="text-sm">&quot;Crafting Digital Excellence Through Innovation&quot;</p>
           </div>
-          <div>
+          <div >
             <h4 className="font-semibold mb-2">Quick Links</h4>
-            <ul className="space-y-1 text-sm">
+            <ul className="space-y-1   text-sm">
               <li>
                 <Link href="/about" className="hover:text-primary">
                   About Us
