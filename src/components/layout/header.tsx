@@ -54,7 +54,7 @@ export default function Header() {
         </div>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden backdrop-blur-md  bg-background shadow-lg absolute w-full left-0 top-full">
+        <div className="md:hidden backdrop-blur-md  bg-slate-950 shadow-lg absolute w-full left-0 top-full">
           <nav className="flex flex-col space-y-2 p-4">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
