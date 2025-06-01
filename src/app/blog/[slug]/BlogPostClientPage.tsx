@@ -18,7 +18,7 @@ type Post = {
 
 
 export type BlogPostClientPageProps = {
- slug: string;
+ slug?: string;
   post?: Post;
 };
 
