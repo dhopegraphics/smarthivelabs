@@ -17,5 +17,5 @@ export async function generateStaticParams() {
 export { generateMetadata }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  return <BlogPostClientPage params={params} />
+  return <BlogPostClientPage slug={params.slug} />
 }
