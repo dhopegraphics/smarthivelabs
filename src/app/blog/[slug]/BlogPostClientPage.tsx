@@ -16,7 +16,9 @@ type Post = {
 }
 
 
-
+export type BlogPostPageProps = {
+  params: { slug: string };
+};
 export type BlogPostClientPageProps = {
   post?: Post;
 };

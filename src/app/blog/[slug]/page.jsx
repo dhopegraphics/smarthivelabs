@@ -1,4 +1,3 @@
-import { generateMetadata } from "./metadata"
 import BlogPostClientPage from "./BlogPostClientPage"
 
 // Dummy data for demonstration
@@ -25,19 +24,24 @@ const posts = [
   },
 ]
 
-function getPostBySlug(slug: string) {
+function getPostBySlug(slug) {
   return posts.find((post) => post.slug === slug)
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return posts.map((post) => ({
     slug: post.slug,
   }))
 }
 
-export { generateMetadata }
+export async function generateMetadata({ params }){
+  const post = getPostBySlug(params.slug)
+  return {
+    title: post?.title || 'Post Not Found',
+  }
+}
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+export default function BlogPostPage({ params }) {
   const post = getPostBySlug(params.slug)
   return <BlogPostClientPage post={post} />
 }
