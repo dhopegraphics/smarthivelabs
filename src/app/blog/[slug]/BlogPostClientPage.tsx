@@ -15,9 +15,14 @@ type Post = {
   content: string
 }
 
-type BlogPostClientPageProps = {
-  post: Post | null
-}
+
+
+export type BlogPostClientPageProps = {
+  params: {
+    slug: string;
+  };
+  post?: Post;
+};
 
 export default function BlogPostClientPage({ post }: BlogPostClientPageProps) {
   if (!post) {

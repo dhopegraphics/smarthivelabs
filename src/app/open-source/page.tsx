@@ -101,7 +101,7 @@ export default function OpenSourcePage() {
       <section className="text-center bg-primary/5 dark:bg-primary/10 p-8 rounded-lg">
         <h2 className="text-2xl font-semibold mb-4 text-foreground">Join Our Open-Source Community!</h2>
         <p className="text-neutral-600 dark:text-neutral-400 mb-6 max-w-xl mx-auto">
-          Whether you're a developer, designer, writer, or enthusiast, there's a place for you. Help us shape the future
+          Whether you&apos;re a developer, designer, writer, or enthusiast, there&apos;s a place for you. Help us shape the future
           of technology.
         </p>
         <Link href="https://github.com/smarhivelabs" target="_blank" rel="noopener noreferrer">

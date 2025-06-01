@@ -2,6 +2,7 @@ import { generateMetadata } from "./metadata"
 import BlogPostClientPage from "./BlogPostClientPage"
 
 // generateStaticParams for SSG (optional, but good for performance)
+
 export async function generateStaticParams() {
   const posts = [
     // Same list as in getPostData or fetched from a source

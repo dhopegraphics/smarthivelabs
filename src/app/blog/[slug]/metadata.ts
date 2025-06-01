@@ -1,3 +1,5 @@
+import { Metadata } from "next/types"
+
 // Placeholder function to get post data - replace with actual data fetching
 async function getPostData(slug: string) {
   // This is a mock. In a real app, you'd fetch from a CMS, database, or markdown files.
