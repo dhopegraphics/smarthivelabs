@@ -1,14 +1,35 @@
 import { generateMetadata } from "./metadata"
 import BlogPostClientPage from "./BlogPostClientPage"
 
-// generateStaticParams for SSG (optional, but good for performance)
+// Dummy data for demonstration
+const posts = [
+  {
+    slug: "getting-started-with-nextjs-15",
+    title: "Getting Started with Next.js 15",
+    date: "2024-06-01",
+    author: "Jane Doe",
+    category: "Next.js",
+    imageUrl: "/images/nextjs-15.png",
+    tags: ["nextjs", "react", "ssg"],
+    content: "<p>Welcome to Next.js 15!</p>",
+  },
+  {
+    slug: "animating-in-blender-tutorial",
+    title: "Animating in Blender: Tutorial",
+    date: "2024-05-20",
+    author: "John Smith",
+    category: "Blender",
+    imageUrl: "/images/blender-tutorial.png",
+    tags: ["blender", "animation", "3d"],
+    content: "<p>Learn how to animate in Blender.</p>",
+  },
+]
+
+function getPostBySlug(slug: string) {
+  return posts.find((post) => post.slug === slug)
+}
 
 export async function generateStaticParams() {
-  const posts = [
-    // Same list as in getPostData or fetched from a source
-    { slug: "getting-started-with-nextjs-15" },
-    { slug: "animating-in-blender-tutorial" },
-  ]
   return posts.map((post) => ({
     slug: post.slug,
   }))
@@ -17,5 +38,6 @@ export async function generateStaticParams() {
 export { generateMetadata }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  return <BlogPostClientPage slug={params.slug} />
+  const post = getPostBySlug(params.slug)
+  return <BlogPostClientPage post={post} />
 }
