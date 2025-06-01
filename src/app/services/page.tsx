@@ -8,6 +8,20 @@ export const metadata: Metadata = {
 }
 
 const services = [
+   {
+    title: "Web & Mobile Development",
+    icon: <Zap size={32} className="text-primary" />,
+    description: "Building responsive, high-performance websites and mobile applications tailored to your needs.",
+    items: ["Frontend Development", "Backend Development", "Full-Stack Solutions", "Cross-Platform Apps"],
+    tools: ["React", "Next.js", "React Native", "Node.js", "Python (Django/Flask)"],
+  },
+    {
+    title: "Desktop Development",
+    icon: <MonitorPlay size={32} className="text-primary" />,
+    description: "Crafting powerful and efficient desktop applications for various platforms.",
+    items: ["Cross-Platform Applications", "Native Performance Apps", "Utility Software"],
+    tools: ["Tauri (Rust)", "Electron.js"],
+  },
   {
     title: "Graphics Design",
     icon: <Palette size={32} className="text-primary" />,
@@ -15,20 +29,8 @@ const services = [
     items: ["Logo Design & Branding", "Flyers & Brochures", "2D/3D Animation", "Motion Graphics"],
     tools: ["Photoshop", "Illustrator", "Blender", "After Effects"],
   },
-  {
-    title: "Web & Mobile Development",
-    icon: <Zap size={32} className="text-primary" />,
-    description: "Building responsive, high-performance websites and mobile applications tailored to your needs.",
-    items: ["Frontend Development", "Backend Development", "Full-Stack Solutions", "Cross-Platform Apps"],
-    tools: ["React", "Next.js", "React Native", "Node.js", "Python (Django/Flask)"],
-  },
-  {
-    title: "Desktop Development",
-    icon: <MonitorPlay size={32} className="text-primary" />,
-    description: "Crafting powerful and efficient desktop applications for various platforms.",
-    items: ["Cross-Platform Applications", "Native Performance Apps", "Utility Software"],
-    tools: ["Tauri (Rust)", "Electron.js"],
-  },
+ 
+
   {
     title: "AI & ML Projects",
     icon: <Cpu size={32} className="text-primary" />,

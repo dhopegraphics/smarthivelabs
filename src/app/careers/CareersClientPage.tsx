@@ -1,13 +1,13 @@
-"use client" // For form handling
-
+"use client" 
 import type React from "react"
-
 import { useState, type FormEvent } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea" // Assuming shadcn/ui textarea
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select" // Assuming shadcn/ui select
-import { Briefcase, Users, Palette, Send } from "lucide-react"
+import { Textarea } from "@/components/ui/textarea" 
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {  Send } from "lucide-react"
+import { careerOpportunities } from "../../data/careerOpportunities"
+import { OpportunityCard } from "../../components/career/OpportunityCard"
 
 const roles = [
   "Graphics Design Intern",
@@ -56,39 +56,15 @@ export default function CareersClientPage() {
         Join our innovative team at Smart Hive Labs! We&apos;re looking for passionate individuals to grow with us.
       </p>
 
-      <section className="mb-16">
+     <section className="mb-16">
         <h2 className="text-3xl font-semibold mb-6 text-center text-foreground">Current Opportunities</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-background p-6 rounded-lg shadow-md">
-            <Palette size={24} className="text-primary mb-2" />
-            <h3 className="text-xl font-semibold mb-1 text-foreground">Internship Programs</h3>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">Graphics, Frontend, Backend, AI/ML</p>
-            <Button variant="link" className="p-0 h-auto text-primary">
-              Learn More
-            </Button>
-          </div>
-          <div className="bg-background p-6 rounded-lg shadow-md">
-            <Briefcase size={24} className="text-primary mb-2" />
-            <h3 className="text-xl font-semibold mb-1 text-foreground">Entry-Level Roles</h3>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-              React, Node.js, Photoshop, Blender, etc.
-            </p>
-            <Button variant="link" className="p-0 h-auto text-primary">
-              View Openings
-            </Button>
-          </div>
-          <div className="bg-background p-6 rounded-lg shadow-md">
-            <Users size={24} className="text-primary mb-2" />
-            <h3 className="text-xl font-semibold mb-1 text-foreground">NSS Placements</h3>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
-              Coming Soon! Stay tuned for national service opportunities.
-            </p>
-            <Button variant="link" className="p-0 h-auto text-primary disabled" disabled>
-              Details Soon
-            </Button>
-          </div>
+          {careerOpportunities.map((opportunity) => (
+            <OpportunityCard key={opportunity.id} opportunity={opportunity}  />
+          ))}
         </div>
       </section>
+
 
       <section className="max-w-2xl mx-auto bg-background p-8 rounded-lg shadow-xl">
         <h2 className="text-3xl font-semibold mb-6 text-center text-foreground">Apply Now</h2>
@@ -122,9 +98,9 @@ export default function CareersClientPage() {
               <SelectTrigger>
                 <SelectValue placeholder="Select a role" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-slate-900/90" >
                 {roles.map((role) => (
-                  <SelectItem key={role} value={role}>
+                  <SelectItem key={role} value={role} className="text-neutral-300 hover:bg-blue-500">
                     {role}
                   </SelectItem>
                 ))}
@@ -137,7 +113,7 @@ export default function CareersClientPage() {
             </label>
             <Textarea name="message" id="message" rows={4} value={formData.message} onChange={handleChange} />
           </div>
-          <Button type="submit" className="w-full" disabled={submissionStatus === "Submitting..."}>
+          <Button type="submit" className="w-full transition-all duration-300 hover:text-blue-600 hover:scale-105 hover:shadow-xl " disabled={submissionStatus === "Submitting..."}>
             {submissionStatus === "Submitting..." ? (
               "Submitting..."
             ) : (
