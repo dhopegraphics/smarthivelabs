@@ -17,7 +17,7 @@ const openSourceProjects = [
     githubLink: "https://github.com/smarhivelabs/hivedemia", // Placeholder
     tags: ["AI/ML", "Python", "Next.js", "Education"],
     contributionGuide: "https://github.com/smarhivelabs/hivedemia/blob/main/CONTRIBUTING.md", // Placeholder
-    issuesLink: "https://github.com/smarhivelabs/hivedemia/issues", // Placeholder
+    issuesLink: "https://github.com/smarthivelabs/hivedemia/issues", // Placeholder
   },
   {
     title: "CivicLink - Civic Tech Initiative",
@@ -25,8 +25,8 @@ const openSourceProjects = [
       "A project focused on leveraging technology for civic engagement and transparency. Currently exploring tools for voter education and electoral process tracking in Ghana.",
     githubLink: "https://github.com/smarhivelabs/civiclink", // Placeholder
     tags: ["CivicTech", "Next.js", "Node.js", "Transparency"],
-    roadmapLink: "https://github.com/smarhivelabs/civiclink/blob/main/ROADMAP.md", // Placeholder
-    issuesLink: "https://github.com/smarhivelabs/civiclink/issues", // Placeholder
+    roadmapLink: "https://github.com/smarthivelabs/civiclink/blob/main/ROADMAP.md", // Placeholder
+    issuesLink: "https://github.com/smarthivelabs/civiclink/issues", // Placeholder
   },
 ]
 
@@ -40,9 +40,9 @@ export default function OpenSourcePage() {
           At Smart Hive Labs, we believe in the power of collaboration and giving back to the community. Explore our
           open-source projects and join us in building innovative solutions.
         </p>
-        <Link href="https://github.com/smarhivelabs" target="_blank" rel="noopener noreferrer">
-          <Button size="lg">
-            <Github className="mr-2 h-5 w-5" /> Visit our GitHub Organization
+        <Link href="https://github.com/smarthivelabs" target="_blank" rel="noopener noreferrer">
+          <Button size="lg" className=" transition-all  duration-300 hover:bg-slate-900 hover:scale-105  hover:shadow-xl" >
+            <Github className="mr-2 h-5 w-5  " /> Visit our GitHub Organization
           </Button>
         </Link>
       </section>
@@ -53,7 +53,7 @@ export default function OpenSourcePage() {
           {openSourceProjects.map((project) => (
             <div
               key={project.title}
-              className="bg-background p-6 rounded-lg shadow-lg hover:shadow-primary/20 transition-shadow duration-300 flex flex-col"
+              className="bg-background p-6 rounded-lg shadow-lg hover:shadow-slate-100/20  hover:scale-105 transition-all duration-300 flex flex-col"
             >
               <h3 className="text-2xl font-semibold mb-2 text-foreground">{project.title}</h3>
               <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4 flex-grow">{project.description}</p>
@@ -69,7 +69,7 @@ export default function OpenSourcePage() {
               </div>
               <div className="mt-auto space-y-2">
                 <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="w-full justify-start">
+                  <Button variant="outline" className="w-full mb-5 justify-start transition-all hover:bg-slate-950 duration-300 hover:scale-105 hover:shadow-xl">
                     <Github className="mr-2 h-4 w-4" /> View on GitHub
                   </Button>
                 </Link>
@@ -104,8 +104,8 @@ export default function OpenSourcePage() {
           Whether you&apos;re a developer, designer, writer, or enthusiast, there&apos;s a place for you. Help us shape the future
           of technology.
         </p>
-        <Link href="https://github.com/smarhivelabs" target="_blank" rel="noopener noreferrer">
-          <Button size="lg" variant="default">
+        <Link href="https://github.com/smarthivelabs" target="_blank" rel="noopener noreferrer">
+          <Button size="lg" variant="default" className=" transition-all  duration-300 hover:bg-slate-900 hover:scale-105  hover:shadow-xl">
             <Users className="mr-2 h-5 w-5" /> Get Involved
           </Button>
         </Link>
