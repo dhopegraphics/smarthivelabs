@@ -38,14 +38,45 @@ export default function ContactPage() {
     setIssueFormData({ ...issueFormData, issueType: value })
   }
 
-  const handleGeneralSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setFormStatus("Sending...")
-    console.log("General contact form:", formData)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setFormStatus("Message sent successfully! We will be in touch.")
-    setFormData({ name: "", email: "", subject: "", message: "" })
-  }
+
+    const handleGeneralSubmit = async (e: FormEvent) => {
+      e.preventDefault();
+      setFormStatus("Sending...");
+  
+      try {
+        // Create form data with Google Forms field names
+        const formDataEncoded = new URLSearchParams();
+  
+        // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
+        formDataEncoded.append("entry.492654800", formData.name); // Name field
+        formDataEncoded.append("entry.436969293", formData.email); // Email field
+        formDataEncoded.append("entry.138659123", formData.subject); // Company field
+        formDataEncoded.append("entry.6561659", formData.message); // Service field
+       
+        // Submit to Google Forms
+        await fetch(
+          "https://docs.google.com/forms/d/e/1FAIpQLSc0V8oI1MlYk036_AQaJ1ydpuaXVG4ar5NdMPlcsPMx_8IcNw/formResponse",
+          {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: formDataEncoded,
+          }
+        );
+  
+        setFormStatus(
+          "Message sent successfully! We will be in touch."
+        );
+         setFormData({ name: "", email: "", subject: "", message: "" })
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setFormStatus(
+          "There was an error sending your inquiry. Please try again later."
+        );
+      }
+    };
 
   const handleIssueSubmit = async (e: FormEvent) => {
     e.preventDefault()
@@ -67,6 +98,11 @@ export default function ContactPage() {
             <MessageSquare className="mr-3 text-primary" />
             Get in Touch
           </h2>
+           <iframe
+          name="hidden_iframe"
+          id="hidden_iframe"
+          className="hidden"
+        ></iframe>
           <form onSubmit={handleGeneralSubmit} className="space-y-6 bg-background p-8 rounded-lg shadow-xl">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
