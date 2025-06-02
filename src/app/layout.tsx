@@ -1,10 +1,13 @@
 import type React from "react";
-import type { Metadata } from "next";
+import type { Metadata  } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/theme-provider";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Analytics } from "@vercel/analytics/next"
+
+
+
 
 
 export const metadata: Metadata = {
@@ -21,7 +24,7 @@ export const metadata: Metadata = {
     "Video Editing", "React", "Next.js", "React Native", "Node.js", 
     "Python", "Tauri", "Rust", "Electron"
   ],
-  authors: [{ name: "Mensah Isaac Nana Sam", url: "https://smarthivelabs.com" }],
+  authors: [{ name: "Mensah Isaac Nana Sam", url: "https://smarthivelabs.dev" }],
   creator: "Mensah Isaac Nana Sam (Dhope Graphics)",
   publisher: "Smart Hive Labs",
   formatDetection: {
