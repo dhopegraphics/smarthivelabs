@@ -1,69 +1,65 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input" // Assuming shadcn/ui input is available
-import { Mail } from "lucide-react"
+import type React from "react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input"; // Assuming shadcn/ui input is available
+import { Mail } from "lucide-react";
 
 export default function NewsletterForm() {
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setMessage("Submitting...");
 
-
-      const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      setMessage("Submitting...");
-
-       if (!email) {
-      setMessage("Please enter your email address.")
-      return
+    if (!email) {
+      setMessage("Please enter your email address.");
+      return;
     }
 
-       if (!/\S+@\S+\.\S+/.test(email)) {
-      setMessage("Please enter a valid email address.")
-      return
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setMessage("Please enter a valid email address.");
+      return;
     }
 
-      try {
-        // Create form data with Google Forms field names
-        const formDataEncoded = new URLSearchParams();
-  
-        // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
-        formDataEncoded.append("entry.1487033616", email); // Name field
-    
-       
-        // Submit to Google Forms
-        await fetch(
-          "https://docs.google.com/forms/d/e/1FAIpQLSeRGOcFmYK6zLICXIYxr_Ko7-qc1jICVa-_thT2bpAEiaDvRA/formResponse",
-          {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: formDataEncoded,
-          }
-        );
-  
-        setMessage(
-          "Thank you for subscribing! We'll keep you updated with the latest news."
-        );
-           setEmail("")
-      } catch (error) {
-        console.error("Error submitting form:", error);
-        setMessage(
-          "There was an error submitting your subscription. Please try again later."
-        );
-      }
-    };
+    try {
+      // Create form data with Google Forms field names
+      const formDataEncoded = new URLSearchParams();
 
+      // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
+      formDataEncoded.append("entry.1487033616", email); // Name field
+
+      // Submit to Google Forms
+      await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSeRGOcFmYK6zLICXIYxr_Ko7-qc1jICVa-_thT2bpAEiaDvRA/formResponse",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: formDataEncoded,
+        }
+      );
+
+      setMessage(
+        "Thank you for subscribing! We'll keep you updated with the latest news."
+      );
+      setEmail("");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setMessage(
+        "There was an error submitting your subscription. Please try again later."
+      );
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto">
       <div className="flex flex-col sm:flex-row gap-2">
-           <iframe
+        <iframe
           name="hidden_iframe"
           id="hidden_iframe"
           className="hidden"
@@ -84,8 +80,14 @@ export default function NewsletterForm() {
         </Button>
       </div>
       {message && (
-        <p className={`mt-2 text-sm ${message.includes("Thank you") ? "text-green-600" : "text-red-600"}`}>{message}</p>
+        <p
+          className={`mt-2 text-sm ${
+            message.includes("Thank you") ? "text-green-600" : "text-red-600"
+          }`}
+        >
+          {message}
+        </p>
       )}
     </form>
-  )
+  );
 }
