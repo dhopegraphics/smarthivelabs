@@ -96,7 +96,7 @@ export default function ContactPage() {
        
         // Submit to Google Forms
         await fetch(
-          "https://docs.google.com/forms/d/e/1FAIpQLSc0V8oI1MlYk036_AQaJ1ydpuaXVG4ar5NdMPlcsPMx_8IcNw/formResponse",
+          "https://docs.google.com/forms/d/e/1FAIpQLScBOe6fOwwlIMAwBc1O-1tc4DztLZsRjgEMnY9GxP_m0qpROw/formResponse",
           {
             method: "POST",
             mode: "no-cors",
@@ -187,7 +187,7 @@ export default function ContactPage() {
                 required
               />
             </div>
-            <Button type="submit" className="w-full" disabled={formStatus === "Sending..."}>
+            <Button type="submit"    className="w-full text-lg py-3 dark:hover:bg-blue-800 hover:bg-blue-600 hover:text-white" disabled={formStatus === "Sending..."}>
               {formStatus === "Sending..." ? (
                 "Sending..."
               ) : (
@@ -311,7 +311,7 @@ export default function ContactPage() {
               required
             />
           </div>
-          <Button type="submit" className="w-full" disabled={issueFormStatus === "Submitting..."}>
+          <Button type="submit"    className="w-full text-lg py-3 dark:hover:bg-blue-800 hover:bg-blue-600 hover:text-white" disabled={issueFormStatus === "Submitting..."}>
             {issueFormStatus === "Submitting..." ? (
               "Submitting..."
             ) : (

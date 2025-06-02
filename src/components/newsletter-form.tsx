@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input" // Assuming shadcn/ui input is available
@@ -11,31 +10,45 @@ export default function NewsletterForm() {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setMessage("") // Clear previous messages
 
-    if (!email) {
-      setMessage("Please enter your email address.")
-      return
-    }
 
-    // Basic email validation
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      setMessage("Please enter a valid email address.")
-      return
-    }
+      const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setMessage("Submitting...");
+  
+      try {
+        // Create form data with Google Forms field names
+        const formDataEncoded = new URLSearchParams();
+  
+        // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
+        formDataEncoded.append("entry.1487033616", email); // Name field
+    
+       
+        // Submit to Google Forms
+        await fetch(
+          "https://docs.google.com/forms/d/e/1FAIpQLSeRGOcFmYK6zLICXIYxr_Ko7-qc1jICVa-_thT2bpAEiaDvRA/formResponse",
+          {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: formDataEncoded,
+          }
+        );
+  
+        setMessage(
+          "Issue reported successfully. Thank you for your feedback!"
+        );
+           setEmail("")
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setMessage(
+          "There was an error sending your inquiry. Please try again later."
+        );
+      }
+    };
 
-    // In a real app, you'd send this to your backend/newsletter service
-    console.log("Subscribing email:", email)
-    setMessage("Thank you for subscribing!")
-    setEmail("")
-
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    // setMessage('Subscription successful! Check your email to confirm.'); // Example success
-    // setMessage('Oops! Something went wrong. Please try again.'); // Example error
-  }
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto">
