@@ -89,10 +89,10 @@ export default function ContactPage() {
         const formDataEncoded = new URLSearchParams();
   
         // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
-        formDataEncoded.append("entry.492654800", issueFormData.name); // Name field
-        formDataEncoded.append("entry.436969293", issueFormData.email); // Email field
-        formDataEncoded.append("entry.138659123", issueFormData.issueType); // Company field
-        formDataEncoded.append("entry.6561659", issueFormData.description); // Service field
+        formDataEncoded.append("entry.833558056", issueFormData.name); // Name field
+        formDataEncoded.append("entry.777662989", issueFormData.email); // Email field
+        formDataEncoded.append("entry.1019693634", issueFormData.issueType); // Company field
+        formDataEncoded.append("entry.1332607264", issueFormData.description); // Service field
        
         // Submit to Google Forms
         await fetch(
