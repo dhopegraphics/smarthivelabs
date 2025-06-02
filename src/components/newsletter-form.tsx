@@ -15,7 +15,17 @@ export default function NewsletterForm() {
       const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       setMessage("Submitting...");
-  
+
+       if (!email) {
+      setMessage("Please enter your email address.")
+      return
+    }
+
+       if (!/\S+@\S+\.\S+/.test(email)) {
+      setMessage("Please enter a valid email address.")
+      return
+    }
+
       try {
         // Create form data with Google Forms field names
         const formDataEncoded = new URLSearchParams();
@@ -38,13 +48,13 @@ export default function NewsletterForm() {
         );
   
         setMessage(
-          "Issue reported successfully. Thank you for your feedback!"
+          "Thank you for subscribing! We'll keep you updated with the latest news."
         );
            setEmail("")
       } catch (error) {
         console.error("Error submitting form:", error);
         setMessage(
-          "There was an error sending your inquiry. Please try again later."
+          "There was an error submitting your subscription. Please try again later."
         );
       }
     };
@@ -53,6 +63,11 @@ export default function NewsletterForm() {
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto">
       <div className="flex flex-col sm:flex-row gap-2">
+           <iframe
+          name="hidden_iframe"
+          id="hidden_iframe"
+          className="hidden"
+        ></iframe>
         <div className="relative flex-grow">
           <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-neutral-400" />
           <Input
@@ -64,7 +79,7 @@ export default function NewsletterForm() {
             aria-label="Email for newsletter"
           />
         </div>
-        <Button type="submit" className="w-full sm:w-auto">
+        <Button type="submit" className="w-full sm:w-auto hover:bg-blue-500">
           Subscribe
         </Button>
       </div>
