@@ -39,15 +39,52 @@ export default function CareersClientPage() {
     setFormData({ ...formData, role: value })
   }
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setSubmissionStatus("Submitting...")
-    // Simulate API call
-    console.log("Career application:", formData)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setSubmissionStatus("Application submitted successfully! We will get back to you soon.")
-    setFormData({ name: "", email: "", portfolio: "", role: "", message: "" }) // Reset form
-  }
+    const handleSubmit = async (e: FormEvent) => {
+      e.preventDefault();
+      setSubmissionStatus("Submitting...");
+  
+      try {
+        // Create form data with Google Forms field names
+        const formDataEncoded = new URLSearchParams();
+  
+        // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
+        formDataEncoded.append("entry.796427824", formData.name); // Name field
+        formDataEncoded.append("entry.165884916", formData.email); // Email field
+        formDataEncoded.append("entry.1272083731", formData.portfolio); // Company field
+        formDataEncoded.append("entry.1129857883", formData.role); // Service field
+        formDataEncoded.append("entry.1113827624", formData.message); // Budget field
+  
+        // Submit to Google Forms
+        await fetch(
+          "https://docs.google.com/forms/d/e/1FAIpQLSedblbE_xYnh__yxeHERfXDnk8ctwASzMFHqvawYj2IvJ6xyQ/formResponse",
+          {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: formDataEncoded,
+          }
+        );
+  
+        setSubmissionStatus(
+          "Application submitted successfully! We will get back to you soon."
+        );
+        setFormData({
+          name: "",
+          email: "",
+          portfolio: "",
+          role: "",
+          message: "",
+         
+        });
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setSubmissionStatus(
+          "There was an error sending your Application. Please try again later."
+        );
+      }
+    };
 
   return (
     <div className="py-12">
