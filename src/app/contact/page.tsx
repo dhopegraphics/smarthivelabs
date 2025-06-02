@@ -78,14 +78,46 @@ export default function ContactPage() {
       }
     };
 
-  const handleIssueSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setIssueFormStatus("Submitting...")
-    console.log("Issue report form:", issueFormData)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIssueFormStatus("Issue reported successfully. Thank you for your feedback!")
-    setIssueFormData({ name: "", email: "", issueType: "Bug", description: "" })
-  }
+
+
+      const handleIssueSubmit = async (e: FormEvent) => {
+      e.preventDefault();
+      setIssueFormStatus("Submitting...");
+  
+      try {
+        // Create form data with Google Forms field names
+        const formDataEncoded = new URLSearchParams();
+  
+        // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
+        formDataEncoded.append("entry.492654800", issueFormData.name); // Name field
+        formDataEncoded.append("entry.436969293", issueFormData.email); // Email field
+        formDataEncoded.append("entry.138659123", issueFormData.issueType); // Company field
+        formDataEncoded.append("entry.6561659", issueFormData.description); // Service field
+       
+        // Submit to Google Forms
+        await fetch(
+          "https://docs.google.com/forms/d/e/1FAIpQLSc0V8oI1MlYk036_AQaJ1ydpuaXVG4ar5NdMPlcsPMx_8IcNw/formResponse",
+          {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: formDataEncoded,
+          }
+        );
+  
+        setIssueFormStatus(
+          "Issue reported successfully. Thank you for your feedback!"
+        );
+         setIssueFormData({ name: "", email: "", issueType: "", description: "" })
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setIssueFormStatus(
+          "There was an error sending your inquiry. Please try again later."
+        );
+      }
+    };
 
   return (
     <div className="py-12">
