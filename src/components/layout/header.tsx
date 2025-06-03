@@ -22,7 +22,7 @@ export default function Header() {
   const pathname = usePathname()
 
   return (
-    <header className="backdrop-blur-md dark:bg-[#0a0a0a] bg-[#ffffff] sticky top-0 z-50 shadow-sm">
+    <header className="backdrop-blur-md dark:bg-[#0a0a0a] text-slate-950 dark:text-white bg-[#ffffff] sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-primary">
           Smart Hive Labs
