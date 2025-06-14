@@ -48,6 +48,14 @@ export const metadata: Metadata = {
     url: true,
   },
   metadataBase: new URL("https://smarthivelabs.dev"),
+  icons: {
+    icon: [
+      { url: "/smarthivelogo_fav.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/smarthivelogo_fav.svg", type: "image/svg+xml" },
+      { url: "/smarthivelogo_fav.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: "/smarthivelogo_fav.png",
+  },
   alternates: {
     canonical: "/",
   },
@@ -59,7 +67,7 @@ export const metadata: Metadata = {
     siteName: "Smart Hive Labs",
     images: [
       {
-        url: "https://smarthivelabs.dev/og-image.jpg",
+        url: "/shl_logo.webp",
         width: 1200,
         height: 630,
         alt: "Smart Hive Labs Logo",
@@ -73,7 +81,7 @@ export const metadata: Metadata = {
     title: "Smart Hive Labs - Crafting Digital Excellence",
     description:
       "Web, Mobile & Desktop Development, Graphics Design, and AI Solutions",
-    images: ["https://smarthivelabs.dev/twitter-image.jpg"],
+    images: ["/shl_logo.webp"],
     creator: "@DhopeGraphics",
   },
   robots: {
