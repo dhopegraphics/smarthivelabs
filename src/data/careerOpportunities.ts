@@ -18,7 +18,7 @@ export const careerOpportunities: CareerOpportunity[] = [
     title: "Internship Programs",
     description: "Graphics, Frontend, Backend, AI/ML",
     buttonText: "Learn More",
-    buttonLink: "/careers/internships"
+    buttonLink: "/careers/internships",
   },
   {
     id: "entry-level",
@@ -26,7 +26,7 @@ export const careerOpportunities: CareerOpportunity[] = [
     title: "Entry-Level Roles",
     description: "React, Node.js, Photoshop, Blender, etc.",
     buttonText: "View Openings",
-    buttonLink: "/careers/entry-level"
+    buttonLink: "/careers/entry-level",
   },
   {
     id: "nss",
@@ -34,6 +34,6 @@ export const careerOpportunities: CareerOpportunity[] = [
     title: "NSS Placements",
     description: "Coming Soon! Stay tuned for national service opportunities.",
     buttonText: "Details Soon",
-    disabled: true
-  }
+    disabled: true,
+  },
 ];
