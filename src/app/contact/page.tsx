@@ -1,14 +1,28 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, type FormEvent } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Mail, MessageSquare, Phone, MapPin, AlertTriangle, Lightbulb, Send } from "lucide-react"
-import NewsletterForm from "@/components/newsletter-form"
+import { useState, type FormEvent } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Mail,
+  MessageSquare,
+  Phone,
+  MapPin,
+  AlertTriangle,
+  Lightbulb,
+  Send,
+} from "lucide-react";
+import NewsletterForm from "@/components/newsletter-form";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -16,112 +30,113 @@ export default function ContactPage() {
     email: "",
     subject: "",
     message: "",
-  })
+  });
   const [issueFormData, setIssueFormData] = useState({
     name: "",
     email: "",
     issueType: "Bug",
     description: "",
-  })
-  const [formStatus, setFormStatus] = useState<string | null>(null)
-  const [issueFormStatus, setIssueFormStatus] = useState<string | null>(null)
+  });
+  const [formStatus, setFormStatus] = useState<string | null>(null);
+  const [issueFormStatus, setIssueFormStatus] = useState<string | null>(null);
 
-  const handleGeneralChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  const handleGeneralChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const handleIssueChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setIssueFormData({ ...issueFormData, [e.target.name]: e.target.value })
-  }
+  const handleIssueChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setIssueFormData({ ...issueFormData, [e.target.name]: e.target.value });
+  };
 
   const handleIssueTypeChange = (value: string) => {
-    setIssueFormData({ ...issueFormData, issueType: value })
-  }
+    setIssueFormData({ ...issueFormData, issueType: value });
+  };
 
+  const handleGeneralSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setFormStatus("Sending...");
 
-    const handleGeneralSubmit = async (e: FormEvent) => {
-      e.preventDefault();
-      setFormStatus("Sending...");
-  
-      try {
-        // Create form data with Google Forms field names
-        const formDataEncoded = new URLSearchParams();
-  
-        // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
-        formDataEncoded.append("entry.492654800", formData.name); // Name field
-        formDataEncoded.append("entry.436969293", formData.email); // Email field
-        formDataEncoded.append("entry.138659123", formData.subject); // Company field
-        formDataEncoded.append("entry.6561659", formData.message); // Service field
-       
-        // Submit to Google Forms
-        await fetch(
-          "https://docs.google.com/forms/d/e/1FAIpQLSc0V8oI1MlYk036_AQaJ1ydpuaXVG4ar5NdMPlcsPMx_8IcNw/formResponse",
-          {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: formDataEncoded,
-          }
-        );
-  
-        setFormStatus(
-          "Message sent successfully! We will be in touch."
-        );
-         setFormData({ name: "", email: "", subject: "", message: "" })
-      } catch (error) {
-        console.error("Error submitting form:", error);
-        setFormStatus(
-          "There was an error sending your inquiry. Please try again later."
-        );
-      }
-    };
+    try {
+      // Create form data with Google Forms field names
+      const formDataEncoded = new URLSearchParams();
 
+      // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
+      formDataEncoded.append("entry.492654800", formData.name); // Name field
+      formDataEncoded.append("entry.436969293", formData.email); // Email field
+      formDataEncoded.append("entry.138659123", formData.subject); // Company field
+      formDataEncoded.append("entry.6561659", formData.message); // Service field
 
+      // Submit to Google Forms
+      await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLSc0V8oI1MlYk036_AQaJ1ydpuaXVG4ar5NdMPlcsPMx_8IcNw/formResponse",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: formDataEncoded,
+        }
+      );
 
-      const handleIssueSubmit = async (e: FormEvent) => {
-      e.preventDefault();
-      setIssueFormStatus("Submitting...");
-  
-      try {
-        // Create form data with Google Forms field names
-        const formDataEncoded = new URLSearchParams();
-  
-        // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
-        formDataEncoded.append("entry.833558056", issueFormData.name); // Name field
-        formDataEncoded.append("entry.777662989", issueFormData.email); // Email field
-        formDataEncoded.append("entry.1019693634", issueFormData.issueType); // Company field
-        formDataEncoded.append("entry.1332607264", issueFormData.description); // Service field
-       
-        // Submit to Google Forms
-        await fetch(
-          "https://docs.google.com/forms/d/e/1FAIpQLScBOe6fOwwlIMAwBc1O-1tc4DztLZsRjgEMnY9GxP_m0qpROw/formResponse",
-          {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: formDataEncoded,
-          }
-        );
-  
-        setIssueFormStatus(
-          "Issue reported successfully. Thank you for your feedback!"
-        );
-         setIssueFormData({ name: "", email: "", issueType: "", description: "" })
-      } catch (error) {
-        console.error("Error submitting form:", error);
-        setIssueFormStatus(
-          "There was an error sending your inquiry. Please try again later."
-        );
-      }
-    };
+      setFormStatus("Message sent successfully! We will be in touch.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setFormStatus(
+        "There was an error sending your inquiry. Please try again later."
+      );
+    }
+  };
+
+  const handleIssueSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIssueFormStatus("Submitting...");
+
+    try {
+      // Create form data with Google Forms field names
+      const formDataEncoded = new URLSearchParams();
+
+      // Add your fields - REPLACE THESE WITH YOUR ACTUAL FIELD NAMES
+      formDataEncoded.append("entry.833558056", issueFormData.name); // Name field
+      formDataEncoded.append("entry.777662989", issueFormData.email); // Email field
+      formDataEncoded.append("entry.1019693634", issueFormData.issueType); // Company field
+      formDataEncoded.append("entry.1332607264", issueFormData.description); // Service field
+
+      // Submit to Google Forms
+      await fetch(
+        "https://docs.google.com/forms/d/e/1FAIpQLScBOe6fOwwlIMAwBc1O-1tc4DztLZsRjgEMnY9GxP_m0qpROw/formResponse",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: formDataEncoded,
+        }
+      );
+
+      setIssueFormStatus(
+        "Issue reported successfully. Thank you for your feedback!"
+      );
+      setIssueFormData({ name: "", email: "", issueType: "", description: "" });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setIssueFormStatus(
+        "There was an error sending your inquiry. Please try again later."
+      );
+    }
+  };
 
   return (
     <div className="py-12">
-      <h1 className="text-4xl font-bold text-center mb-12 text-foreground">Contact Us</h1>
+      <h1 className="text-4xl font-bold text-center mb-12 text-foreground">
+        Contact Us
+      </h1>
 
       <div className="grid md:grid-cols-2 gap-16 mb-16">
         {/* General Contact Form */}
@@ -130,20 +145,36 @@ export default function ContactPage() {
             <MessageSquare className="mr-3 text-primary" />
             Get in Touch
           </h2>
-           <iframe
-          name="hidden_iframe"
-          id="hidden_iframe"
-          className="hidden"
-        ></iframe>
-          <form onSubmit={handleGeneralSubmit} className="space-y-6 bg-background p-8 rounded-lg shadow-xl">
+          <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            className="hidden"
+          ></iframe>
+          <form
+            onSubmit={handleGeneralSubmit}
+            className="space-y-6 bg-background p-8 rounded-lg shadow-xl"
+          >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1"
+              >
                 Full Name
               </label>
-              <Input type="text" name="name" id="name" value={formData.name} onChange={handleGeneralChange} required />
+              <Input
+                type="text"
+                name="name"
+                id="name"
+                value={formData.name}
+                onChange={handleGeneralChange}
+                required
+              />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1"
+              >
                 Email Address
               </label>
               <Input
@@ -187,7 +218,11 @@ export default function ContactPage() {
                 required
               />
             </div>
-            <Button type="submit"    className="w-full text-lg py-3 dark:hover:bg-blue-800 hover:bg-blue-600 hover:text-white" disabled={formStatus === "Sending..."}>
+            <Button
+              type="submit"
+              className="w-full text-lg py-3 dark:hover:bg-blue-800 hover:bg-blue-600 hover:text-white"
+              disabled={formStatus === "Sending..."}
+            >
               {formStatus === "Sending..." ? (
                 "Sending..."
               ) : (
@@ -197,34 +232,44 @@ export default function ContactPage() {
               )}
             </Button>
             {formStatus && !formStatus.includes("Sending...") && (
-              <p className="mt-4 text-center text-sm text-green-600 dark:text-green-400">{formStatus}</p>
+              <p className="mt-4 text-center text-sm text-green-600 dark:text-green-400">
+                {formStatus}
+              </p>
             )}
           </form>
         </section>
 
         {/* Contact Information */}
         <section>
-          <h2 className="text-3xl font-semibold mb-6 text-foreground">Contact Information</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-foreground">
+            Contact Information
+          </h2>
           <div className="space-y-4 text-neutral-700 dark:text-neutral-300 bg-background p-8 rounded-lg shadow-xl">
             <p className="flex items-center">
               <Mail className="mr-3 h-5 w-5 text-primary" />{" "}
-              <a href="mailto:info@smarhivelabs.com" className="hover:text-primary">
-                info@smarhivelabs.com
+              <a
+                href="mailto:info@smarhivelabs.com"
+                className="hover:text-primary"
+              >
+                support@smarhivelabs.dev
               </a>
             </p>
             <p className="flex items-center">
               <Phone className="mr-3 h-5 w-5 text-primary" />{" "}
               <a href="tel:+233000000000" className="hover:text-primary">
-                +233 (0)00 000 000 (Placeholder)
+                +233 (0)59 795 9032
               </a>
             </p>
             <p className="flex items-start">
-              <MapPin className="mr-3 h-5 w-5 text-primary mt-1" /> Accra, Ghana (Placeholder Address)
+              <MapPin className="mr-3 h-5 w-5 text-primary mt-1" /> Prestea,
+              Ghana
             </p>
           </div>
 
           <div className="mt-10">
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">Newsletter</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-foreground">
+              Newsletter
+            </h3>
             <div className="bg-background p-8 rounded-lg shadow-xl">
               <p className="text-neutral-600 dark:text-neutral-400 mb-4">
                 Stay updated on our latest projects & opportunities.
@@ -238,9 +283,13 @@ export default function ContactPage() {
       {/* Issue Reporting Section */}
       <section className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-semibold mb-6 text-center text-foreground flex items-center justify-center">
-          <AlertTriangle className="mr-3 text-primary" /> Report an Issue or Suggestion
+          <AlertTriangle className="mr-3 text-primary" /> Report an Issue or
+          Suggestion
         </h2>
-        <form onSubmit={handleIssueSubmit} className="space-y-6 bg-background p-8 rounded-lg shadow-xl">
+        <form
+          onSubmit={handleIssueSubmit}
+          className="space-y-6 bg-background p-8 rounded-lg shadow-xl"
+        >
           <div>
             <label
               htmlFor="issueName"
@@ -280,16 +329,22 @@ export default function ContactPage() {
             >
               Type
             </label>
-            <Select name="issueType" value={issueFormData.issueType} onValueChange={handleIssueTypeChange}>
+            <Select
+              name="issueType"
+              value={issueFormData.issueType}
+              onValueChange={handleIssueTypeChange}
+            >
               <SelectTrigger>
                 <SelectValue placeholder="Select type" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="Bug">
-                  Bug Report <AlertTriangle className="inline ml-1 h-4 w-4 text-red-500" />
+                  Bug Report{" "}
+                  <AlertTriangle className="inline ml-1 h-4 w-4 text-red-500" />
                 </SelectItem>
                 <SelectItem value="Suggestion">
-                  Suggestion / Feedback <Lightbulb className="inline ml-1 h-4 w-4 text-yellow-500" />
+                  Suggestion / Feedback{" "}
+                  <Lightbulb className="inline ml-1 h-4 w-4 text-yellow-500" />
                 </SelectItem>
                 <SelectItem value="Other">Other</SelectItem>
               </SelectContent>
@@ -311,7 +366,11 @@ export default function ContactPage() {
               required
             />
           </div>
-          <Button type="submit"    className="w-full text-lg py-3 dark:hover:bg-blue-800 hover:bg-blue-600 hover:text-white" disabled={issueFormStatus === "Submitting..."}>
+          <Button
+            type="submit"
+            className="w-full text-lg py-3 dark:hover:bg-blue-800 hover:bg-blue-600 hover:text-white"
+            disabled={issueFormStatus === "Submitting..."}
+          >
             {issueFormStatus === "Submitting..." ? (
               "Submitting..."
             ) : (
@@ -321,10 +380,12 @@ export default function ContactPage() {
             )}
           </Button>
           {issueFormStatus && !issueFormStatus.includes("Submitting...") && (
-            <p className="mt-4 text-center text-sm text-green-600 dark:text-green-400">{issueFormStatus}</p>
+            <p className="mt-4 text-center text-sm text-green-600 dark:text-green-400">
+              {issueFormStatus}
+            </p>
           )}
         </form>
       </section>
     </div>
-  )
+  );
 }
