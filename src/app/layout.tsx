@@ -2,10 +2,12 @@ import type React from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/theme-provider";
+import { CartProvider } from "@/contexts/CartContext";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: {
@@ -124,12 +126,15 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         <ThemeProvider>
-          <Header />
-          <main className="flex-grow container mx-auto px-4 py-8">
-            {children}
-          </main>
-          <Footer />
-          <Analytics />
+          <CartProvider>
+            <Header />
+            <main className="flex-grow container mx-auto px-4 py-8">
+              {children}
+            </main>
+            <Footer />
+            <Analytics />
+            <Toaster />
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>
