@@ -1,13 +1,13 @@
 "use client";
 
-import React from "react";
-import { useSearchParams } from "next/navigation";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Share2, Home, ShoppingBag } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
-export default function SuccessPage() {
+function SuccessPageContent() {
   const searchParams = useSearchParams();
   const paymentRef = searchParams.get("ref");
   const amount = searchParams.get("amount");
@@ -246,5 +246,13 @@ export default function SuccessPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div className="py-16 text-center">Loading...</div>}>
+      <SuccessPageContent />
+    </Suspense>
   );
 }
