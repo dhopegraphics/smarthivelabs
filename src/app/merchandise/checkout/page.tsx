@@ -148,15 +148,9 @@ export default function CheckoutPage() {
 
     setIsProcessing(true);
 
-    const initializePaystackPayment = () => {
-      if (!validateForm()) {
-        toast.error("Please fill in all required fields correctly");
-        return;
-      }
-
-      setIsProcessing(true);
-
-      // For now, simulate payment processing - replace with actual Paystack integration
+    // For development - simulate payment with mock data
+    // Replace this section with actual Paystack integration when ready
+    if (process.env.NODE_ENV === "development") {
       setTimeout(async () => {
         try {
           const mockReference = `SHL_${Date.now()}_${Math.random()
@@ -182,72 +176,37 @@ export default function CheckoutPage() {
           setIsProcessing(false);
         }
       }, 2000);
-    }; // Initialize Paystack payment
-    const handler = window.PaystackPop.setup({
-      key:
-        process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY ||
-        "pk_test_YOUR_PUBLIC_KEY", // Replace with your Paystack public key
-      email: customerInfo.email,
-      amount: Math.round(finalTotal * 100), // Amount in pesewas (multiply by 100)
-      currency: "GHS",
-      ref: `SHL_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      firstname: customerInfo.firstName,
-      lastname: customerInfo.lastName,
-      phone: customerInfo.phone,
-      metadata: {
-        custom_fields: [
-          {
-            display_name: "Order Items",
-            variable_name: "order_items",
-            value: state.items.length.toString(),
-          },
-          {
-            display_name: "Customer Address",
-            variable_name: "customer_address",
-            value: `${customerInfo.address}, ${customerInfo.city}, ${customerInfo.region}`,
-          },
-        ],
-      },
-      callback: async function (response: {
-        reference: string;
-        [key: string]: unknown;
-      }) {
-        console.log("Payment successful:", response);
+      return;
+    }
 
-        try {
-          // Submit order to Google Forms
-          await submitToGoogleForms(response.reference);
+    // Mock payment processing for development
+    // Replace with actual Paystack integration in production
+    setTimeout(async () => {
+      try {
+        const paymentReference = `SHL_${Date.now()}_${Math.random()
+          .toString(36)
+          .substr(2, 9)}`;
 
-          // Clear cart
-          clearCart();
+        // Submit order to Google Forms
+        await submitToGoogleForms(paymentReference);
 
-          // Redirect to success page
-          router.push(
-            `/merchandise/success?ref=${response.reference}&amount=${finalTotal}`
-          );
+        // Clear cart
+        clearCart();
 
-          toast.success("Payment successful! Your order has been placed.");
-        } catch (error) {
-          console.error("Error processing order:", error);
-          toast.error(
-            "Payment successful but there was an issue processing your order. Please contact support."
-          );
-        }
-      },
-      onClose: function () {
+        // Redirect to success page
+        router.push(
+          `/merchandise/success?ref=${paymentReference}&amount=${finalTotal}`
+        );
+
+        toast.success("Order placed successfully!");
+      } catch (error) {
+        console.error("Error processing order:", error);
+        toast.error("Failed to process order. Please try again.");
+      } finally {
         setIsProcessing(false);
-        toast.info("Payment cancelled");
-      },
-      onerror: function (error: unknown) {
-        console.error("Payment error:", error);
-        setIsProcessing(false);
-        toast.error("Payment failed. Please try again.");
-      },
-    });
-
-    handler.openIframe();
+      }
+    }, 2000);
   };
-
   const handleInputChange = (field: keyof CustomerInfo, value: string) => {
     setCustomerInfo((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) {
