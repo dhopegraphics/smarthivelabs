@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, use } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,13 +28,14 @@ import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default function ProductPage({ params }: ProductPageProps) {
-  const product = getProductBySlug(params.slug);
+  const { slug } = use(params);
+  const product = getProductBySlug(slug);
   const { addToCart } = useCart();
 
   const [selectedImage, setSelectedImage] = useState(0);
