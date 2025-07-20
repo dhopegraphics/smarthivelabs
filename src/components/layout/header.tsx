@@ -1,25 +1,41 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Menu, X, Code, Briefcase, Users, MessageSquare, FileText, Info, Handshake } from "lucide-react"
-import { useState } from "react"
-import { DarkModeToggle } from "@/components/dark-mode-toggle"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import {
+  Menu,
+  X,
+  Code,
+  Briefcase,
+  Users,
+  MessageSquare,
+  FileText,
+  Info,
+  Handshake,
+  ShoppingBag,
+} from "lucide-react";
+import { useState } from "react";
+import { DarkModeToggle } from "@/components/dark-mode-toggle";
 
 const navLinks = [
   { href: "/services", label: "Services", icon: <Briefcase size={18} /> },
   { href: "/projects", label: "Projects", icon: <FileText size={18} /> },
   { href: "/careers", label: "Careers", icon: <Users size={18} /> },
+  {
+    href: "/merchandise",
+    label: "Merchandise",
+    icon: <ShoppingBag size={18} />,
+  },
   { href: "/open-source", label: "Open Source", icon: <Code size={18} /> },
   { href: "/blog", label: "Blog", icon: <MessageSquare size={18} /> },
   { href: "/about", label: "About Us", icon: <Info size={18} /> },
   { href: "/hire-us", label: "Hire Us", icon: <Handshake size={18} /> },
   { href: "/contact", label: "Contact", icon: <MessageSquare size={18} /> },
-]
+];
 
 export default function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="backdrop-blur-md dark:bg-[#0a0a0a] text-slate-950 dark:text-white bg-[#ffffff] sticky top-0 z-50 shadow-sm">
@@ -29,16 +45,20 @@ export default function Header() {
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href
+            const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-colors ${isActive ? "text-blue-400 font-semibold underline " : " text-slate-100 rounded px-2 hover:text-slate-400"}`}
+                className={`transition-colors ${
+                  isActive
+                    ? "text-blue-400 font-semibold underline "
+                    : " text-slate-100 rounded px-2 hover:text-slate-400"
+                }`}
               >
                 {link.label}
               </Link>
-            )
+            );
           })}
           <DarkModeToggle />
         </nav>
@@ -57,22 +77,26 @@ export default function Header() {
         <div className="md:hidden backdrop-blur-md  bg-slate-950 shadow-lg absolute w-full left-0 top-full">
           <nav className="flex flex-col space-y-2 p-4">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href
+              const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`flex items-center space-x-2 p-2 rounded-md transition-colors ${isActive ? "bg-blue-600 text-white font-semibold" : "text-foreground hover:text-blue-500 hover:bg-primary"}`}
+                  className={`flex items-center space-x-2 p-2 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-blue-600 text-white font-semibold"
+                      : "text-foreground hover:text-blue-500 hover:bg-primary"
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.icon}
                   <span>{link.label}</span>
                 </Link>
-              )
+              );
             })}
           </nav>
         </div>
       )}
     </header>
-  )
+  );
 }
