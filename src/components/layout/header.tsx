@@ -39,7 +39,7 @@ export default function Header() {
 
   return (
     <header className="bg-gradient-to-r from-white via-blue-50/30 to-purple-50/30 backdrop-blur-xl border-b border-white/20 sticky top-0 z-50 shadow-lg shadow-blue-500/5">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="container mx-auto  py-3 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3 group">
           <div className="relative">
@@ -62,13 +62,13 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-xl hover:scale-105 group ${
+                className={`relative px-4 w-24 py-2 text-sm font-medium transition-all duration-300 rounded-xl hover:scale-105 group ${
                   isActive
                     ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/25"
                     : "text-gray-700 hover:text-primary hover:bg-white/50 hover:shadow-md"
                 }`}
               >
-                <span className="relative z-10 flex items-center space-x-2">
+                <span className="relative z-10 flex items-center  space-x-2">
                   {link.icon}
                   <span>{link.label}</span>
                 </span>

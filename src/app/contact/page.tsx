@@ -19,8 +19,15 @@ import {
   Phone,
   MapPin,
   AlertTriangle,
-  Lightbulb,
   Send,
+  Users,
+  Clock,
+  CheckCircle,
+  Star,
+  Globe,
+  HeadphonesIcon,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
 import NewsletterForm from "@/components/newsletter-form";
 
@@ -133,259 +140,426 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="py-12">
-      <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">
-        Contact Us
-      </h1>
-
-      <div className="grid md:grid-cols-2 gap-16 mb-16">
-        {/* General Contact Form */}
-        <section>
-          <h2 className="text-3xl font-semibold mb-6 text-gray-900 flex items-center">
-            <MessageSquare className="mr-3 text-primary" />
-            Get in Touch
-          </h2>
-          <iframe
-            name="hidden_iframe"
-            id="hidden_iframe"
-            className="hidden"
-          ></iframe>
-          <form
-            onSubmit={handleGeneralSubmit}
-            className="space-y-6 bg-white p-8 rounded-lg shadow-xl"
-          >
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Full Name
-              </label>
-              <Input
-                type="text"
-                name="name"
-                id="name"
-                value={formData.name}
-                onChange={handleGeneralChange}
-                required
-              />
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center">
+            <div className="flex justify-center mb-8">
+              <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 shadow-lg animate-bounce">
+                <MessageSquare className="h-12 w-12 text-white" />
+              </div>
             </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Email Address
-              </label>
-              <Input
-                type="email"
-                name="email"
-                id="email"
-                value={formData.email}
-                onChange={handleGeneralChange}
-                required
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="subject"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Subject
-              </label>
-              <Input
-                type="text"
-                name="subject"
-                id="subject"
-                value={formData.subject}
-                onChange={handleGeneralChange}
-                required
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
-                Message
-              </label>
-              <Textarea
-                name="message"
-                id="message"
-                rows={5}
-                value={formData.message}
-                onChange={handleGeneralChange}
-                required
-              />
-            </div>
-            <Button
-              type="submit"
-              className="w-full text-lg py-3 hover:bg-blue-600 hover:bg-blue-600 hover:text-white"
-              disabled={formStatus === "Sending..."}
-            >
-              {formStatus === "Sending..." ? (
-                "Sending..."
-              ) : (
-                <>
-                  Send Message <Send className="ml-2 h-4 w-4" />
-                </>
-              )}
-            </Button>
-            {formStatus && !formStatus.includes("Sending...") && (
-              <p className="mt-4 text-center text-sm text-green-600 text-green-600">
-                {formStatus}
-              </p>
-            )}
-          </form>
-        </section>
-
-        {/* Contact Information */}
-        <section>
-          <h2 className="text-3xl font-semibold mb-6 text-gray-900">
-            Contact Information
-          </h2>
-          <div className="space-y-4 text-gray-700 bg-white p-8 rounded-lg shadow-xl">
-            <p className="flex items-center">
-              <Mail className="mr-3 h-5 w-5 text-primary" />{" "}
-              <a
-                href="mailto:info@smarhivelabs.com"
-                className="hover:text-primary"
-              >
-                support@smarhivelabs.dev
-              </a>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              Get In{" "}
+              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+                Touch
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-4xl mx-auto leading-relaxed">
+              Ready to bring your vision to life? We&apos;re here to help you
+              build something amazing. Let&apos;s start the conversation!
             </p>
-            <p className="flex items-center">
-              <Phone className="mr-3 h-5 w-5 text-primary" />{" "}
-              <a href="tel:+233000000000" className="hover:text-primary">
-                +233 (0)59 795 9032
-              </a>
-            </p>
-            <p className="flex items-start">
-              <MapPin className="mr-3 h-5 w-5 text-primary mt-1" /> Prestea,
-              Ghana
-            </p>
+            <div className="flex flex-wrap justify-center gap-8 text-sm">
+              <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
+                <Clock className="h-4 w-4 mr-2 text-green-300" />
+                Quick Response
+              </div>
+              <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
+                <Users className="h-4 w-4 mr-2 text-blue-300" />
+                Expert Team
+              </div>
+              <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
+                <Globe className="h-4 w-4 mr-2 text-purple-300" />
+                Global Reach
+              </div>
+            </div>
           </div>
+        </div>
+        {/* Decorative Elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-10 left-10 w-24 h-24 bg-yellow-300/20 rounded-full blur-xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-orange-300/20 rounded-full blur-lg"></div>
+        </div>
+      </section>
 
-          <div className="mt-10">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900">
-              Newsletter
-            </h3>
-            <div className="bg-white p-8 rounded-lg shadow-xl">
-              <p className="text-gray-600 mb-4">
-                Stay updated on our latest projects & opportunities.
-              </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid lg:grid-cols-2 gap-16 mb-20">
+          {/* General Contact Form */}
+          <section>
+            <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-3xl p-12 shadow-2xl border border-gray-100">
+              <div className="text-center mb-10">
+                <div className="flex justify-center mb-6">
+                  <div className="bg-primary rounded-full p-4">
+                    <Send className="h-10 w-10 text-white" />
+                  </div>
+                </div>
+                <h2 className="text-4xl font-bold text-foreground mb-4">
+                  Send us a Message
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Have a project in mind? We&apos;d love to hear about it!
+                </p>
+              </div>
+
+              <iframe
+                name="hidden_iframe"
+                id="hidden_iframe"
+                className="hidden"
+              ></iframe>
+              <form onSubmit={handleGeneralSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-bold text-foreground mb-3"
+                    >
+                      <CheckCircle className="h-4 w-4 inline mr-2 text-primary" />
+                      Full Name
+                    </label>
+                    <Input
+                      type="text"
+                      name="name"
+                      id="name"
+                      value={formData.name}
+                      onChange={handleGeneralChange}
+                      className="rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-bold text-foreground mb-3"
+                    >
+                      <Mail className="h-4 w-4 inline mr-2 text-primary" />
+                      Email Address
+                    </label>
+                    <Input
+                      type="email"
+                      name="email"
+                      id="email"
+                      value={formData.email}
+                      onChange={handleGeneralChange}
+                      className="rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
+                      placeholder="your.email@example.com"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-bold text-foreground mb-3"
+                  >
+                    <Star className="h-4 w-4 inline mr-2 text-primary" />
+                    Subject
+                  </label>
+                  <Input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    value={formData.subject}
+                    onChange={handleGeneralChange}
+                    className="rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
+                    placeholder="What's this about?"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-bold text-foreground mb-3"
+                  >
+                    <MessageSquare className="h-4 w-4 inline mr-2 text-primary" />
+                    Message
+                  </label>
+                  <Textarea
+                    name="message"
+                    id="message"
+                    rows={6}
+                    value={formData.message}
+                    onChange={handleGeneralChange}
+                    className="rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
+                    placeholder="Tell us about your project or inquiry..."
+                    required
+                  />
+                </div>
+
+                <div className="text-center">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 font-semibold px-12 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    disabled={formStatus === "Sending..."}
+                  >
+                    {formStatus === "Sending..." ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </>
+                    )}
+                  </Button>
+                </div>
+
+                {formStatus && !formStatus.includes("Sending...") && (
+                  <div className="text-center">
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="text-green-700 font-medium">{formStatus}</p>
+                    </div>
+                  </div>
+                )}
+              </form>
+            </div>
+          </section>
+
+          {/* Contact Information & Newsletter */}
+          <section className="space-y-8">
+            {/* Contact Info */}
+            <div className="bg-gradient-to-br from-indigo-50 via-white to-blue-50 rounded-3xl p-10 shadow-xl border border-gray-100">
+              <div className="text-center mb-8">
+                <div className="flex justify-center mb-4">
+                  <div className="bg-indigo-600 rounded-full p-3">
+                    <HeadphonesIcon className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-3xl font-bold text-foreground mb-2">
+                  Contact Information
+                </h3>
+                <p className="text-muted-foreground">
+                  Get in touch through any of these channels
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-center bg-white/50 rounded-xl p-4 hover:bg-white/80 transition-colors">
+                  <div className="bg-blue-100 rounded-lg p-3 mr-4">
+                    <Mail className="h-5 w-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Email</p>
+                    <a
+                      href="mailto:support@smarhivelabs.dev"
+                      className="text-primary hover:text-primary/80 transition-colors"
+                    >
+                      support@smarhivelabs.dev
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center bg-white/50 rounded-xl p-4 hover:bg-white/80 transition-colors">
+                  <div className="bg-green-100 rounded-lg p-3 mr-4">
+                    <Phone className="h-5 w-5 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Phone</p>
+                    <a
+                      href="tel:+233000000000"
+                      className="text-primary hover:text-primary/80 transition-colors"
+                    >
+                      +233 (0)59 795 9032
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start bg-white/50 rounded-xl p-4 hover:bg-white/80 transition-colors">
+                  <div className="bg-purple-100 rounded-lg p-3 mr-4 mt-1">
+                    <MapPin className="h-5 w-5 text-purple-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Location</p>
+                    <p className="text-muted-foreground">Prestea, Ghana</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Newsletter */}
+            <div className="bg-gradient-to-br from-yellow-50 via-white to-orange-50 rounded-3xl p-10 shadow-xl border border-gray-100">
+              <div className="text-center mb-6">
+                <div className="flex justify-center mb-4">
+                  <div className="bg-orange-500 rounded-full p-3">
+                    <Sparkles className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  Stay Updated
+                </h3>
+                <p className="text-muted-foreground">
+                  Get the latest updates on our projects & opportunities
+                </p>
+              </div>
               <NewsletterForm />
             </div>
+          </section>
+        </div>
+
+        {/* Issue Reporting Section */}
+        <section className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-br from-red-50 via-white to-pink-50 rounded-3xl p-12 shadow-2xl border border-gray-100">
+            <div className="text-center mb-12">
+              <div className="flex justify-center mb-6">
+                <div className="bg-red-500 rounded-full p-4">
+                  <AlertTriangle className="h-10 w-10 text-white" />
+                </div>
+              </div>
+              <h2 className="text-4xl font-bold text-foreground mb-4">
+                Report an Issue
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                Found a bug or have a suggestion? We appreciate your feedback
+                and will address it promptly.
+              </p>
+            </div>
+
+            <form onSubmit={handleIssueSubmit} className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    htmlFor="issueName"
+                    className="block text-sm font-bold text-foreground mb-3"
+                  >
+                    <CheckCircle className="h-4 w-4 inline mr-2 text-primary" />
+                    Your Name
+                  </label>
+                  <Input
+                    type="text"
+                    name="name"
+                    id="issueName"
+                    value={issueFormData.name}
+                    onChange={handleIssueChange}
+                    className="rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="issueEmail"
+                    className="block text-sm font-bold text-foreground mb-3"
+                  >
+                    <Mail className="h-4 w-4 inline mr-2 text-primary" />
+                    Your Email
+                  </label>
+                  <Input
+                    type="email"
+                    name="email"
+                    id="issueEmail"
+                    value={issueFormData.email}
+                    onChange={handleIssueChange}
+                    className="rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
+                    placeholder="your.email@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="issueType"
+                  className="block text-sm font-bold text-foreground mb-3"
+                >
+                  <Star className="h-4 w-4 inline mr-2 text-primary" />
+                  Issue Type
+                </label>
+                <Select
+                  name="issueType"
+                  value={issueFormData.issueType}
+                  onValueChange={handleIssueTypeChange}
+                >
+                  <SelectTrigger className="rounded-lg border-gray-200 focus:border-primary focus:ring-primary">
+                    <SelectValue placeholder="Select issue type" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border border-gray-200 rounded-lg shadow-lg">
+                    <SelectItem
+                      value="Bug"
+                      className="text-foreground hover:bg-red-50 focus:bg-red-50"
+                    >
+                      🐛 Bug Report
+                    </SelectItem>
+                    <SelectItem
+                      value="Suggestion"
+                      className="text-foreground hover:bg-yellow-50 focus:bg-yellow-50"
+                    >
+                      💡 Suggestion / Feedback
+                    </SelectItem>
+                    <SelectItem
+                      value="Other"
+                      className="text-foreground hover:bg-blue-50 focus:bg-blue-50"
+                    >
+                      📝 Other
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="issueDescription"
+                  className="block text-sm font-bold text-foreground mb-3"
+                >
+                  <MessageSquare className="h-4 w-4 inline mr-2 text-primary" />
+                  Description
+                </label>
+                <Textarea
+                  name="description"
+                  id="issueDescription"
+                  rows={6}
+                  value={issueFormData.description}
+                  onChange={handleIssueChange}
+                  className="rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
+                  placeholder="Please describe the issue or suggestion in detail..."
+                  required
+                />
+              </div>
+
+              <div className="text-center">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="bg-red-500 hover:bg-red-600 font-semibold px-12 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-white"
+                  disabled={issueFormStatus === "Submitting..."}
+                >
+                  {issueFormStatus === "Submitting..." ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Submit Report
+                      <Send className="ml-2 h-5 w-5" />
+                    </>
+                  )}
+                </Button>
+              </div>
+
+              {issueFormStatus &&
+                !issueFormStatus.includes("Submitting...") && (
+                  <div className="text-center">
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                      <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                      <p className="text-green-700 font-medium">
+                        {issueFormStatus}
+                      </p>
+                    </div>
+                  </div>
+                )}
+            </form>
           </div>
         </section>
       </div>
-
-      {/* Issue Reporting Section */}
-      <section className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-6 text-center text-gray-900 flex items-center justify-center">
-          <AlertTriangle className="mr-3 text-primary" /> Report an Issue or
-          Suggestion
-        </h2>
-        <form
-          onSubmit={handleIssueSubmit}
-          className="space-y-6 bg-white p-8 rounded-lg shadow-xl"
-        >
-          <div>
-            <label
-              htmlFor="issueName"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Your Name
-            </label>
-            <Input
-              type="text"
-              name="name"
-              id="issueName"
-              value={issueFormData.name}
-              onChange={handleIssueChange}
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="issueEmail"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Your Email
-            </label>
-            <Input
-              type="email"
-              name="email"
-              id="issueEmail"
-              value={issueFormData.email}
-              onChange={handleIssueChange}
-              required
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="issueType"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Type
-            </label>
-            <Select
-              name="issueType"
-              value={issueFormData.issueType}
-              onValueChange={handleIssueTypeChange}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Bug">
-                  Bug Report{" "}
-                  <AlertTriangle className="inline ml-1 h-4 w-4 text-red-500" />
-                </SelectItem>
-                <SelectItem value="Suggestion">
-                  Suggestion / Feedback{" "}
-                  <Lightbulb className="inline ml-1 h-4 w-4 text-yellow-500" />
-                </SelectItem>
-                <SelectItem value="Other">Other</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <div>
-            <label
-              htmlFor="issueDescription"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Description
-            </label>
-            <Textarea
-              name="description"
-              id="issueDescription"
-              rows={5}
-              value={issueFormData.description}
-              onChange={handleIssueChange}
-              required
-            />
-          </div>
-          <Button
-            type="submit"
-            className="w-full text-lg py-3 hover:bg-blue-600 hover:bg-blue-600 hover:text-white"
-            disabled={issueFormStatus === "Submitting..."}
-          >
-            {issueFormStatus === "Submitting..." ? (
-              "Submitting..."
-            ) : (
-              <>
-                Submit Report <Send className="ml-2 h-4 w-4" />
-              </>
-            )}
-          </Button>
-          {issueFormStatus && !issueFormStatus.includes("Submitting...") && (
-            <p className="mt-4 text-center text-sm text-green-600 text-green-600">
-              {issueFormStatus}
-            </p>
-          )}
-        </form>
-      </section>
     </div>
   );
 }
