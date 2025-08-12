@@ -72,7 +72,7 @@ export default function Hivedemia() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 dark:to-blue-400">
             Hivedemia
           </h1>
-          <p className="text-xl text-neutral-700 dark:text-neutral-300 mb-6">
+          <p className="text-xl text-gray-700 mb-6">
             Transform your learning experience with our AI-powered study
             platform designed to make education more personalized, efficient,
             and accessible.
@@ -112,7 +112,7 @@ export default function Hivedemia() {
       <section className="mb-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Supercharge Your Learning</h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Hivedemia combines cutting-edge AI technology with effective
             learning methodologies to create a powerful educational experience.
           </p>
@@ -129,7 +129,7 @@ export default function Hivedemia() {
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-neutral-600 dark:text-neutral-400">
+                <p className="text-gray-600">
                   {feature.description}
                 </p>
               </CardContent>
@@ -142,7 +142,7 @@ export default function Hivedemia() {
       <section className="mb-20 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-950/30 dark:to-blue-950/30 rounded-2xl p-8 md:p-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">How Hivedemia Works</h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Our platform utilizes advanced AI to deliver a seamless and
             intuitive learning experience.
           </p>
@@ -156,7 +156,7 @@ export default function Hivedemia() {
             <h3 className="text-xl font-semibold mb-2">
               Upload Your Materials
             </h3>
-            <p className="text-neutral-600 dark:text-neutral-400">
+            <p className="text-gray-600">
               Share your notes, textbooks, or assignments with our AI system.
             </p>
           </div>
@@ -166,7 +166,7 @@ export default function Hivedemia() {
               2
             </div>
             <h3 className="text-xl font-semibold mb-2">AI Analysis</h3>
-            <p className="text-neutral-600 dark:text-neutral-400">
+            <p className="text-gray-600">
               Our AI processes and understands your content to provide
               personalized support.
             </p>
@@ -177,7 +177,7 @@ export default function Hivedemia() {
               3
             </div>
             <h3 className="text-xl font-semibold mb-2">Learn & Improve</h3>
-            <p className="text-neutral-600 dark:text-neutral-400">
+            <p className="text-gray-600">
               Receive tailored assistance, quizzes, and track your progress over
               time.
             </p>
@@ -196,7 +196,7 @@ export default function Hivedemia() {
             </div>
             <div className="md:w-2/3">
               <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-              <p className="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+              <p className="text-lg text-gray-700 mb-6">
                 To empower students worldwide with intelligent tools for
                 personalized, efficient learning. We believe education should be
                 accessible, engaging, and adapted to each learner&apos;s unique
@@ -205,7 +205,7 @@ export default function Hivedemia() {
               <div className="flex items-center space-x-4">
                 <div>
                   <h3 className="font-semibold">Mensah Isaac Nana Sam</h3>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                  <p className="text-sm text-gray-600">
                     Founder (Dhope Graphics)
                   </p>
                 </div>
@@ -219,7 +219,7 @@ export default function Hivedemia() {
       <section className="mb-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">About the Creator</h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Hivedemia is developed by Smart Hive Labs, a company dedicated to
             innovation in education and technology.
           </p>
@@ -228,7 +228,7 @@ export default function Hivedemia() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl p-6 shadow-md">
             <h3 className="text-xl font-semibold mb-2">Dhope Graphics</h3>
-            <p className="text-neutral-600 dark:text-neutral-400 mb-4">
+            <p className="text-gray-600 mb-4">
               The brand name of Mensah Isaac Nana Sam, focusing on creative
               digital solutions that merge design with technology.
             </p>
@@ -242,7 +242,7 @@ export default function Hivedemia() {
 
           <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl p-6 shadow-md">
             <h3 className="text-xl font-semibold mb-2">Smart Hive Labs</h3>
-            <p className="text-neutral-600 dark:text-neutral-400 mb-4">
+            <p className="text-gray-600 mb-4">
               A technology company focused on developing innovative solutions
               that address real-world challenges in education and beyond.
             </p>

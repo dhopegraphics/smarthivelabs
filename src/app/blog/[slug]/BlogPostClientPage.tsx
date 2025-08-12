@@ -27,7 +27,7 @@ export default function BlogPostClientPage({ post }: BlogPostClientPageProps) {
     return (
       <div className="py-12 text-center">
         <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
-        <p className="text-neutral-600 dark:text-neutral-400 mb-8">
+        <p className="text-gray-600 mb-8">
           Sorry, the blog post you are looking for does not exist.
         </p>
         <Link href="/blog">
@@ -46,8 +46,8 @@ export default function BlogPostClientPage({ post }: BlogPostClientPageProps) {
           <Link href="/blog" className="inline-flex items-center text-primary hover:underline mb-4 text-sm">
             <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-3 text-foreground leading-tight">{post.title}</h1>
-          <div className="text-sm text-neutral-500 dark:text-neutral-400 flex items-center space-x-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-3 text-gray-900 leading-tight">{post.title}</h1>
+          <div className="text-sm text-gray-500 flex items-center space-x-4">
             <span className="flex items-center">
               <CalendarDays className="mr-1.5 h-4 w-4" />{" "}
               {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
@@ -71,20 +71,20 @@ export default function BlogPostClientPage({ post }: BlogPostClientPageProps) {
 
         {/* Apply Tailwind typography for rich text content if available, or style manually */}
         <div
-          className="prose prose-lg dark:prose-invert max-w-none text-foreground 
-                     prose-headings:text-foreground prose-a:text-primary hover:prose-a:underline 
-                     prose-strong:text-foreground prose-code:bg-neutral-100 prose-code:dark:bg-neutral-800 prose-code:p-1 prose-code:rounded-sm
-                     prose-blockquote:border-l-primary prose-blockquote:text-neutral-600 prose-blockquote:dark:text-neutral-400"
+          className="prose prose-lg max-w-none text-gray-900 
+                     prose-headings:text-gray-900 prose-a:text-primary hover:prose-a:underline 
+                     prose-strong:text-gray-900 prose-code:bg-neutral-100 prose-code:bg-gray-100 prose-code:p-1 prose-code:rounded-sm
+                     prose-blockquote:border-l-primary prose-blockquote:text-neutral-600 prose-blockquote:text-gray-600"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
-        <div className="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-700">
-          <h4 className="text-sm font-semibold mb-2 text-neutral-600 dark:text-neutral-400">Tags:</h4>
+        <div className="mt-8 pt-6 border-t border-gray-200">
+          <h4 className="text-sm font-semibold mb-2 text-gray-600">Tags:</h4>
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="bg-neutral-200 dark:bg-neutral-700 text-xs font-medium text-neutral-700 dark:text-neutral-300 px-3 py-1 rounded-full"
+                className="bg-gray-100 text-xs font-medium text-gray-700 px-3 py-1 rounded-full"
               >
                 {tag}
               </span>

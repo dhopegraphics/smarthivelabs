@@ -49,7 +49,7 @@ export default function CheckoutPage() {
     return (
       <div className="py-16 px-4 max-w-4xl mx-auto text-center">
         <h1 className="text-3xl font-bold mb-4">No Items to Checkout</h1>
-        <p className="text-neutral-600 dark:text-neutral-400 mb-8">
+        <p className="text-gray-600 mb-8">
           Your cart is empty. Please add some items before proceeding to
           checkout.
         </p>
@@ -357,7 +357,7 @@ export default function CheckoutPage() {
                 <CheckCircle className="h-5 w-5 text-green-500" />
                 <span className="font-medium">Standard Delivery</span>
               </div>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="text-sm text-gray-600">
                 Delivery within 3-5 business days across Ghana
               </p>
             </CardContent>
@@ -375,7 +375,7 @@ export default function CheckoutPage() {
               <div className="space-y-3">
                 {state.items.map((item) => (
                   <div key={item.itemId} className="flex gap-3">
-                    <div className="w-16 h-16 bg-neutral-100 dark:bg-neutral-800 rounded-lg overflow-hidden flex-shrink-0">
+                    <div className="w-16 h-16 bg-gray-50 rounded-lg overflow-hidden flex-shrink-0">
                       <Image
                         src={item.product.images[0]}
                         alt={item.product.name}
@@ -399,7 +399,7 @@ export default function CheckoutPage() {
                           {item.selectedColor}
                         </Badge>
                       </div>
-                      <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                      <p className="text-sm text-gray-600">
                         Qty: {item.quantity}
                       </p>
                     </div>
@@ -424,7 +424,7 @@ export default function CheckoutPage() {
                   <span>Shipping</span>
                   <span
                     className={
-                      shipping === 0 ? "text-green-600 dark:text-green-400" : ""
+                      shipping === 0 ? "text-green-600 text-green-600" : ""
                     }
                   >
                     {shipping === 0 ? "FREE" : `GH₵ ${shipping.toFixed(2)}`}
@@ -451,7 +451,7 @@ export default function CheckoutPage() {
               </Button>
 
               {/* Security Info */}
-              <div className="flex items-center justify-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
+              <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
                 <Lock className="h-4 w-4" />
                 <span>Secured by Paystack</span>
               </div>

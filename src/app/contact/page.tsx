@@ -134,14 +134,14 @@ export default function ContactPage() {
 
   return (
     <div className="py-12">
-      <h1 className="text-4xl font-bold text-center mb-12 text-foreground">
+      <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">
         Contact Us
       </h1>
 
       <div className="grid md:grid-cols-2 gap-16 mb-16">
         {/* General Contact Form */}
         <section>
-          <h2 className="text-3xl font-semibold mb-6 text-foreground flex items-center">
+          <h2 className="text-3xl font-semibold mb-6 text-gray-900 flex items-center">
             <MessageSquare className="mr-3 text-primary" />
             Get in Touch
           </h2>
@@ -152,12 +152,12 @@ export default function ContactPage() {
           ></iframe>
           <form
             onSubmit={handleGeneralSubmit}
-            className="space-y-6 bg-background p-8 rounded-lg shadow-xl"
+            className="space-y-6 bg-white p-8 rounded-lg shadow-xl"
           >
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1"
+                className="block text-sm font-medium text-gray-700 mb-1"
               >
                 Full Name
               </label>
@@ -173,7 +173,7 @@ export default function ContactPage() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1"
+                className="block text-sm font-medium text-gray-700 mb-1"
               >
                 Email Address
               </label>
@@ -189,7 +189,7 @@ export default function ContactPage() {
             <div>
               <label
                 htmlFor="subject"
-                className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1"
+                className="block text-sm font-medium text-gray-700 mb-1"
               >
                 Subject
               </label>
@@ -205,7 +205,7 @@ export default function ContactPage() {
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1"
+                className="block text-sm font-medium text-gray-700 mb-1"
               >
                 Message
               </label>
@@ -220,7 +220,7 @@ export default function ContactPage() {
             </div>
             <Button
               type="submit"
-              className="w-full text-lg py-3 dark:hover:bg-blue-800 hover:bg-blue-600 hover:text-white"
+              className="w-full text-lg py-3 hover:bg-blue-600 hover:bg-blue-600 hover:text-white"
               disabled={formStatus === "Sending..."}
             >
               {formStatus === "Sending..." ? (
@@ -232,7 +232,7 @@ export default function ContactPage() {
               )}
             </Button>
             {formStatus && !formStatus.includes("Sending...") && (
-              <p className="mt-4 text-center text-sm text-green-600 dark:text-green-400">
+              <p className="mt-4 text-center text-sm text-green-600 text-green-600">
                 {formStatus}
               </p>
             )}
@@ -241,10 +241,10 @@ export default function ContactPage() {
 
         {/* Contact Information */}
         <section>
-          <h2 className="text-3xl font-semibold mb-6 text-foreground">
+          <h2 className="text-3xl font-semibold mb-6 text-gray-900">
             Contact Information
           </h2>
-          <div className="space-y-4 text-neutral-700 dark:text-neutral-300 bg-background p-8 rounded-lg shadow-xl">
+          <div className="space-y-4 text-gray-700 bg-white p-8 rounded-lg shadow-xl">
             <p className="flex items-center">
               <Mail className="mr-3 h-5 w-5 text-primary" />{" "}
               <a
@@ -267,11 +267,11 @@ export default function ContactPage() {
           </div>
 
           <div className="mt-10">
-            <h3 className="text-2xl font-semibold mb-4 text-foreground">
+            <h3 className="text-2xl font-semibold mb-4 text-gray-900">
               Newsletter
             </h3>
-            <div className="bg-background p-8 rounded-lg shadow-xl">
-              <p className="text-neutral-600 dark:text-neutral-400 mb-4">
+            <div className="bg-white p-8 rounded-lg shadow-xl">
+              <p className="text-gray-600 mb-4">
                 Stay updated on our latest projects & opportunities.
               </p>
               <NewsletterForm />
@@ -282,18 +282,18 @@ export default function ContactPage() {
 
       {/* Issue Reporting Section */}
       <section className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-6 text-center text-foreground flex items-center justify-center">
+        <h2 className="text-3xl font-semibold mb-6 text-center text-gray-900 flex items-center justify-center">
           <AlertTriangle className="mr-3 text-primary" /> Report an Issue or
           Suggestion
         </h2>
         <form
           onSubmit={handleIssueSubmit}
-          className="space-y-6 bg-background p-8 rounded-lg shadow-xl"
+          className="space-y-6 bg-white p-8 rounded-lg shadow-xl"
         >
           <div>
             <label
               htmlFor="issueName"
-              className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1"
+              className="block text-sm font-medium text-gray-700 mb-1"
             >
               Your Name
             </label>
@@ -309,7 +309,7 @@ export default function ContactPage() {
           <div>
             <label
               htmlFor="issueEmail"
-              className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1"
+              className="block text-sm font-medium text-gray-700 mb-1"
             >
               Your Email
             </label>
@@ -325,7 +325,7 @@ export default function ContactPage() {
           <div>
             <label
               htmlFor="issueType"
-              className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1"
+              className="block text-sm font-medium text-gray-700 mb-1"
             >
               Type
             </label>
@@ -353,7 +353,7 @@ export default function ContactPage() {
           <div>
             <label
               htmlFor="issueDescription"
-              className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1"
+              className="block text-sm font-medium text-gray-700 mb-1"
             >
               Description
             </label>
@@ -368,7 +368,7 @@ export default function ContactPage() {
           </div>
           <Button
             type="submit"
-            className="w-full text-lg py-3 dark:hover:bg-blue-800 hover:bg-blue-600 hover:text-white"
+            className="w-full text-lg py-3 hover:bg-blue-600 hover:bg-blue-600 hover:text-white"
             disabled={issueFormStatus === "Submitting..."}
           >
             {issueFormStatus === "Submitting..." ? (
@@ -380,7 +380,7 @@ export default function ContactPage() {
             )}
           </Button>
           {issueFormStatus && !issueFormStatus.includes("Submitting...") && (
-            <p className="mt-4 text-center text-sm text-green-600 dark:text-green-400">
+            <p className="mt-4 text-center text-sm text-green-600 text-green-600">
               {issueFormStatus}
             </p>
           )}

@@ -26,13 +26,13 @@ export default function HivedemiaPrivacyPolicy() {
           <Shield className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
         </div>
         <h1 className="text-4xl font-bold mb-4">Hivedemia Privacy Policy</h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
+        <p className="text-gray-600">
           Last Updated: {currentDate}
         </p>
       </div>
 
       {/* Introduction */}
-      <div className="prose dark:prose-invert max-w-none mb-10">
+      <div className="prose max-w-none mb-10">
         <p className="text-lg">
           At Hivedemia, we value your privacy. This policy explains how we
           handle your data when you use our mobile app, available on Android and
@@ -58,7 +58,7 @@ export default function HivedemiaPrivacyPolicy() {
           <h3 className="font-semibold text-xl mb-2">
             a) User-Provided Content:
           </h3>
-          <ul className="list-disc pl-6 space-y-2 text-neutral-700 dark:text-neutral-300">
+          <ul className="list-disc pl-6 space-y-2 text-gray-700">
             <li>Documents or lecture slides you upload</li>
             <li>Images you provide (e.g., for Snap & Solve)</li>
             <li>Text-based prompts you submit</li>
@@ -69,14 +69,14 @@ export default function HivedemiaPrivacyPolicy() {
           <h3 className="font-semibold text-xl mb-2">
             b) Automatically Collected Information:
           </h3>
-          <ul className="list-disc pl-6 space-y-2 text-neutral-700 dark:text-neutral-300">
+          <ul className="list-disc pl-6 space-y-2 text-gray-700">
             <li>Device type, operating system (for improving performance)</li>
             <li>Usage data (non-personal, aggregated statistics)</li>
           </ul>
         </div>
 
-        <div className="bg-neutral-100 dark:bg-neutral-800 p-4 rounded-lg mt-6">
-          <p className="text-neutral-700 dark:text-neutral-300 italic">
+        <div className="bg-gray-50 p-4 rounded-lg mt-6">
+          <p className="text-gray-700 italic">
             We do not collect personal identifiers such as names, contact
             details, or location unless explicitly provided by you (e.g., via
             account creation).
@@ -99,9 +99,9 @@ export default function HivedemiaPrivacyPolicy() {
 
         <div className="space-y-3 mb-6">
           <div className="flex items-start">
-            <div className="bg-green-100 dark:bg-green-900/30 p-1 rounded mr-3 mt-0.5">
+            <div className="bg-green-100 bg-green-50 p-1 rounded mr-3 mt-0.5">
               <svg
-                className="h-4 w-4 text-green-600 dark:text-green-400"
+                className="h-4 w-4 text-green-600 text-green-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -114,15 +114,15 @@ export default function HivedemiaPrivacyPolicy() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Generating AI-powered quizzes from your notes
             </p>
           </div>
 
           <div className="flex items-start">
-            <div className="bg-green-100 dark:bg-green-900/30 p-1 rounded mr-3 mt-0.5">
+            <div className="bg-green-100 bg-green-50 p-1 rounded mr-3 mt-0.5">
               <svg
-                className="h-4 w-4 text-green-600 dark:text-green-400"
+                className="h-4 w-4 text-green-600 text-green-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -135,15 +135,15 @@ export default function HivedemiaPrivacyPolicy() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Summarizing documents or lecture slides
             </p>
           </div>
 
           <div className="flex items-start">
-            <div className="bg-green-100 dark:bg-green-900/30 p-1 rounded mr-3 mt-0.5">
+            <div className="bg-green-100 bg-green-50 p-1 rounded mr-3 mt-0.5">
               <svg
-                className="h-4 w-4 text-green-600 dark:text-green-400"
+                className="h-4 w-4 text-green-600 text-green-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -156,15 +156,15 @@ export default function HivedemiaPrivacyPolicy() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Processing images to assist with problem-solving
             </p>
           </div>
 
           <div className="flex items-start">
-            <div className="bg-green-100 dark:bg-green-900/30 p-1 rounded mr-3 mt-0.5">
+            <div className="bg-green-100 bg-green-50 p-1 rounded mr-3 mt-0.5">
               <svg
-                className="h-4 w-4 text-green-600 dark:text-green-400"
+                className="h-4 w-4 text-green-600 text-green-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -177,14 +177,14 @@ export default function HivedemiaPrivacyPolicy() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Improving app performance and user experience
             </p>
           </div>
         </div>
 
-        <div className="bg-neutral-100 dark:bg-neutral-800 p-4 rounded-lg">
-          <p className="text-neutral-700 dark:text-neutral-300">
+        <div className="bg-gray-50 p-4 rounded-lg">
+          <p className="text-gray-700">
             All AI-generated responses are produced based on the data you
             submit. We do not use your content for any other purpose.
           </p>
@@ -200,7 +200,7 @@ export default function HivedemiaPrivacyPolicy() {
           <h2 className="text-2xl font-bold">3. Data Storage & Retention</h2>
         </div>
 
-        <ul className="list-disc pl-6 space-y-3 text-neutral-700 dark:text-neutral-300">
+        <ul className="list-disc pl-6 space-y-3 text-gray-700">
           <li>
             Your uploaded content is processed temporarily to generate results.
           </li>
@@ -225,7 +225,7 @@ export default function HivedemiaPrivacyPolicy() {
           <h2 className="text-2xl font-bold">4. Third-Party Services</h2>
         </div>
 
-        <p className="mb-4 text-neutral-700 dark:text-neutral-300">
+        <p className="mb-4 text-gray-700">
           We may use trusted AI service providers (e.g., OpenAI, Gemini, Claude)
           to process your content. These services operate under strict privacy
           standards.
@@ -267,7 +267,7 @@ export default function HivedemiaPrivacyPolicy() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Choose whether to save generated content
             </p>
           </div>
@@ -288,7 +288,7 @@ export default function HivedemiaPrivacyPolicy() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Delete your saved data at any time
             </p>
           </div>
@@ -309,7 +309,7 @@ export default function HivedemiaPrivacyPolicy() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Decline permissions (e.g., Camera, File Access), but some features
               may not work
             </p>
@@ -326,7 +326,7 @@ export default function HivedemiaPrivacyPolicy() {
           <h2 className="text-2xl font-bold">6. Security</h2>
         </div>
 
-        <p className="text-neutral-700 dark:text-neutral-300">
+        <p className="text-gray-700">
           We use industry-standard security to protect your data, including
           encryption of content in transit. However, no system is 100% secure —
           use the app responsibly.
@@ -342,7 +342,7 @@ export default function HivedemiaPrivacyPolicy() {
           <h2 className="text-2xl font-bold">7. Children&apos;s Privacy</h2>
         </div>
 
-        <p className="text-neutral-700 dark:text-neutral-300">
+        <p className="text-gray-700">
           Hivedemia is designed for students aged 13 and above. We do not
           knowingly collect data from children under 13.
         </p>
@@ -357,7 +357,7 @@ export default function HivedemiaPrivacyPolicy() {
           <h2 className="text-2xl font-bold">8. Updates to This Policy</h2>
         </div>
 
-        <p className="text-neutral-700 dark:text-neutral-300">
+        <p className="text-gray-700">
           We may update this policy to reflect changes in our practices.
           Continued use of Hivedemia means you accept these changes.
         </p>
@@ -372,7 +372,7 @@ export default function HivedemiaPrivacyPolicy() {
           <h2 className="text-2xl font-bold">9. Contact Us</h2>
         </div>
 
-        <p className="mb-6 text-neutral-700 dark:text-neutral-300">
+        <p className="mb-6 text-gray-700">
           For questions about this policy, reach out:
         </p>
 

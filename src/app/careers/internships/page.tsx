@@ -97,7 +97,7 @@ export default function Internships() {
         <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-400 dark:to-violet-400">
           Smart Hive Labs Internship Program
         </h1>
-        <p className="text-lg text-neutral-700 dark:text-neutral-300 max-w-3xl mx-auto mb-8">
+        <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
           Join our 3-month immersive training and skill empowerment program.
           Gain hands-on experience, mentorship, and build your professional
           portfolio.
@@ -105,19 +105,19 @@ export default function Internships() {
         <div className="flex flex-wrap gap-4 justify-center mb-10">
           <div className="flex items-center">
             <Calendar className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
-            <span className="text-neutral-700 dark:text-neutral-300">
+            <span className="text-gray-700">
               3-month duration
             </span>
           </div>
           <div className="flex items-center">
             <Clock className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
-            <span className="text-neutral-700 dark:text-neutral-300">
+            <span className="text-gray-700">
               20 hours weekly
             </span>
           </div>
           <div className="flex items-center">
             <GraduationCap className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
-            <span className="text-neutral-700 dark:text-neutral-300">
+            <span className="text-gray-700">
               Certificate upon completion
             </span>
           </div>
@@ -125,7 +125,7 @@ export default function Internships() {
         <div className="flex justify-center">
           <Button
             size="lg"
-            className="rounded-full px-8 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800"
+            className="rounded-full px-8 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 hover:bg-blue-600"
           >
             <a href="#apply">Apply Now</a>
           </Button>
@@ -139,7 +139,7 @@ export default function Internships() {
         </h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Smart Hive Labs&apos; Internship Program is designed to empower
               the next generation of tech talents through hands-on training and
               real-world projects. Our 3-month program focuses on practical
@@ -149,31 +149,31 @@ export default function Internships() {
             <div className="space-y-2">
               <div className="flex items-start">
                 <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                <p className="text-neutral-700 dark:text-neutral-300">
+                <p className="text-gray-700">
                   Work on real-world projects with experienced mentors
                 </p>
               </div>
               <div className="flex items-start">
                 <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                <p className="text-neutral-700 dark:text-neutral-300">
+                <p className="text-gray-700">
                   Weekly skill development workshops and code reviews
                 </p>
               </div>
               <div className="flex items-start">
                 <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                <p className="text-neutral-700 dark:text-neutral-300">
+                <p className="text-gray-700">
                   Build a professional portfolio to showcase your work
                 </p>
               </div>
               <div className="flex items-start">
                 <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                <p className="text-neutral-700 dark:text-neutral-300">
+                <p className="text-gray-700">
                   Certificate of completion and recommendation letter
                 </p>
               </div>
               <div className="flex items-start">
                 <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                <p className="text-neutral-700 dark:text-neutral-300">
+                <p className="text-gray-700">
                   Opportunity for full-time roles for exceptional performers
                 </p>
               </div>
@@ -204,7 +204,7 @@ export default function Internships() {
         <h2 className="text-3xl font-bold mb-2 text-center">
           Available Tracks
         </h2>
-        <p className="text-center text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl mx-auto">
+        <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
           Choose your specialization path and develop in-demand skills for the
           tech industry
         </p>
@@ -224,11 +224,11 @@ export default function Internships() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+                <p className="text-gray-700 mb-4">
                   {track.description}
                 </p>
                 <div className="mb-4">
-                  <h4 className="font-medium mb-2 text-sm uppercase text-neutral-500 dark:text-neutral-400">
+                  <h4 className="font-medium mb-2 text-sm uppercase text-gray-500">
                     Skills You&apos;ll Learn
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -244,10 +244,10 @@ export default function Internships() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2 text-sm uppercase text-neutral-500 dark:text-neutral-400">
+                  <h4 className="font-medium mb-2 text-sm uppercase text-gray-500">
                     Project Examples
                   </h4>
-                  <ul className="list-disc list-inside text-neutral-700 dark:text-neutral-300 text-sm space-y-1">
+                  <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
                     {track.projects.map((project, index) => (
                       <li key={index}>{project}</li>
                     ))}
@@ -275,7 +275,7 @@ export default function Internships() {
               <span className="font-bold text-lg">1</span>
             </div>
             <h3 className="text-xl font-bold mb-2">Month 1: Foundations</h3>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Master the fundamentals of your chosen track through structured
               learning modules and small practice assignments.
             </p>
@@ -286,7 +286,7 @@ export default function Internships() {
               <span className="font-bold text-lg">2</span>
             </div>
             <h3 className="text-xl font-bold mb-2">Month 2: Application</h3>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Apply your skills to guided projects with increasing complexity.
               Work collaboratively with other interns.
             </p>
@@ -297,7 +297,7 @@ export default function Internships() {
               <span className="font-bold text-lg">3</span>
             </div>
             <h3 className="text-xl font-bold mb-2">Month 3: Capstone</h3>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Complete a real-world capstone project that will be featured in
               your portfolio. Present your work to the team.
             </p>
@@ -321,12 +321,12 @@ export default function Internships() {
                 </div>
                 <div>
                   <p className="font-bold">Kofi Addo</p>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                  <p className="text-sm text-gray-600">
                     Frontend Development, 2023
                   </p>
                 </div>
               </div>
-              <blockquote className="text-neutral-700 dark:text-neutral-300 italic">
+              <blockquote className="text-gray-700 italic">
                 &quot;The Smart Hive Labs internship transformed my career path.
                 I gained practical skills that no classroom could teach, and the
                 mentors were incredibly supportive. Now I work as a junior
@@ -345,12 +345,12 @@ export default function Internships() {
                 </div>
                 <div>
                   <p className="font-bold">Ama Darko</p>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                  <p className="text-sm text-gray-600">
                     Graphics Design, 2023
                   </p>
                 </div>
               </div>
-              <blockquote className="text-neutral-700 dark:text-neutral-300 italic">
+              <blockquote className="text-gray-700 italic">
                 &quot;I came in with basic design skills but graduated from the
                 program with a professional portfolio. The hands-on projects and
                 feedback sessions were invaluable. I&apos;m now freelancing for
@@ -400,7 +400,7 @@ export default function Internships() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-neutral-700 dark:text-neutral-300">
+              <p className="text-gray-700">
                 This is an unpaid training program focused on skill development.
                 However, exceptional interns may be offered stipends for their
                 capstone projects and potential employment opportunities upon
@@ -416,7 +416,7 @@ export default function Internships() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-neutral-700 dark:text-neutral-300">
+              <p className="text-gray-700">
                 Basic knowledge in your chosen track, strong interest in
                 technology, and commitment to the 3-month program with
                 approximately 20 hours per week availability.
@@ -431,7 +431,7 @@ export default function Internships() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-neutral-700 dark:text-neutral-300">
+              <p className="text-gray-700">
                 We offer only remote for now .
               </p>
             </CardContent>
@@ -444,7 +444,7 @@ export default function Internships() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-neutral-700 dark:text-neutral-300">
+              <p className="text-gray-700">
                 All interns receive a certificate of completion and a
                 recommendation letter. Top performers may be offered full-time
                 positions or freelance opportunities with Smart Hive Labs and
@@ -458,7 +458,7 @@ export default function Internships() {
       {/* Final CTA */}
       <section className="text-center">
         <h2 className="text-2xl font-bold mb-4">Have more questions?</h2>
-        <p className="text-neutral-700 dark:text-neutral-300 mb-6">
+        <p className="text-gray-700 mb-6">
           Contact us at{" "}
           <a
             href="mailto:internships@smarthivelabs.com"

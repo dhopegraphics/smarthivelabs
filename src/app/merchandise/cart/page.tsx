@@ -25,11 +25,11 @@ export default function CartPage() {
   if (state.items.length === 0) {
     return (
       <div className="py-16 px-4 max-w-4xl mx-auto text-center">
-        <div className="inline-flex items-center justify-center p-4 bg-neutral-100 dark:bg-neutral-800 rounded-full mb-6">
+        <div className="inline-flex items-center justify-center p-4 bg-gray-50 rounded-full mb-6">
           <ShoppingBag className="h-12 w-12 text-neutral-400" />
         </div>
         <h1 className="text-3xl font-bold mb-4">Your Cart is Empty</h1>
-        <p className="text-neutral-600 dark:text-neutral-400 mb-8">
+        <p className="text-gray-600 mb-8">
           Looks like you haven&apos;t added any items to your cart yet.
         </p>
         <Button asChild size="lg">
@@ -51,7 +51,7 @@ export default function CartPage() {
           Continue Shopping
         </Link>
         <h1 className="text-3xl font-bold">Shopping Cart</h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
+        <p className="text-gray-600">
           {state.itemCount} {state.itemCount === 1 ? "item" : "items"} in your
           cart
         </p>
@@ -65,7 +65,7 @@ export default function CartPage() {
               <CardContent className="p-6">
                 <div className="flex gap-4">
                   {/* Product Image */}
-                  <div className="w-24 h-24 bg-neutral-100 dark:bg-neutral-800 rounded-lg overflow-hidden flex-shrink-0">
+                  <div className="w-24 h-24 bg-gray-50 rounded-lg overflow-hidden flex-shrink-0">
                     <Image
                       src={item.product.images[0]}
                       alt={item.product.name}
@@ -169,7 +169,7 @@ export default function CartPage() {
                 <span>Shipping</span>
                 <span
                   className={
-                    shipping === 0 ? "text-green-600 dark:text-green-400" : ""
+                    shipping === 0 ? "text-green-600 text-green-600" : ""
                   }
                 >
                   {shipping === 0 ? "FREE" : `GH₵ ${shipping.toFixed(2)}`}
@@ -177,13 +177,13 @@ export default function CartPage() {
               </div>
 
               {shipping > 0 && (
-                <div className="text-sm text-neutral-600 dark:text-neutral-400">
+                <div className="text-sm text-gray-600">
                   Add GH₵ {(100 - state.total).toFixed(2)} more for free
                   shipping
                 </div>
               )}
 
-              <hr className="border-neutral-200 dark:border-neutral-700" />
+              <hr className="border-gray-200" />
 
               <div className="flex justify-between text-lg font-bold">
                 <span>Total</span>
@@ -200,7 +200,7 @@ export default function CartPage() {
               </div>
 
               {/* Shipping Info */}
-              <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
+              <div className="text-sm text-gray-600 space-y-2">
                 <p>🚚 Delivery within 3-5 business days</p>
                 <p>📦 Free shipping on orders over GH₵ 100</p>
                 <p>🇬🇭 Shipping within Ghana only</p>

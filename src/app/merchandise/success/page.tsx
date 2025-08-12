@@ -52,13 +52,13 @@ function SuccessPageContent() {
     <div className="py-16 px-4 max-w-4xl mx-auto text-center">
       {/* Success Icon and Message */}
       <div className="mb-8">
-        <div className="inline-flex items-center justify-center p-4 bg-green-100 dark:bg-green-900/30 rounded-full mb-6">
-          <CheckCircle className="h-16 w-16 text-green-600 dark:text-green-400" />
+        <div className="inline-flex items-center justify-center p-4 bg-green-100 bg-green-50 rounded-full mb-6">
+          <CheckCircle className="h-16 w-16 text-green-600 text-green-600" />
         </div>
-        <h1 className="text-4xl font-bold mb-4 text-green-600 dark:text-green-400">
+        <h1 className="text-4xl font-bold mb-4 text-green-600 text-green-600">
           Order Placed Successfully!
         </h1>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Thank you for your purchase! Your order has been confirmed and
           we&apos;ll begin processing it shortly.
         </p>
@@ -75,10 +75,10 @@ function SuccessPageContent() {
         <CardContent className="space-y-4">
           {paymentRef && (
             <div>
-              <label className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
+              <label className="text-sm font-medium text-gray-600">
                 Payment Reference
               </label>
-              <p className="font-mono text-sm bg-neutral-100 dark:bg-neutral-800 p-2 rounded border">
+              <p className="font-mono text-sm bg-gray-50 p-2 rounded border">
                 {paymentRef}
               </p>
             </div>
@@ -86,20 +86,20 @@ function SuccessPageContent() {
 
           {amount && (
             <div>
-              <label className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
+              <label className="text-sm font-medium text-gray-600">
                 Total Amount
               </label>
-              <p className="text-2xl font-bold text-green-600 dark:text-green-400">
+              <p className="text-2xl font-bold text-green-600 text-green-600">
                 GH₵ {parseFloat(amount).toFixed(2)}
               </p>
             </div>
           )}
 
           <div>
-            <label className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
+            <label className="text-sm font-medium text-gray-600">
               Order Date
             </label>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               {new Date().toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -125,7 +125,7 @@ function SuccessPageContent() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Order Confirmation</h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                <p className="text-sm text-gray-600">
                   You&apos;ll receive an email confirmation with your order
                   details within the next few minutes.
                 </p>
@@ -138,7 +138,7 @@ function SuccessPageContent() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Processing</h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                <p className="text-sm text-gray-600">
                   We&apos;ll prepare your order and get it ready for shipping
                   within 1-2 business days.
                 </p>
@@ -151,7 +151,7 @@ function SuccessPageContent() {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Delivery</h3>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                <p className="text-sm text-gray-600">
                   Your order will be delivered within 3-5 business days across
                   Ghana.
                 </p>
@@ -170,7 +170,7 @@ function SuccessPageContent() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-neutral-600 dark:text-neutral-400 mb-6">
+          <p className="text-gray-600 mb-6">
             Love Smart Hive Labs? Share your purchase with friends and help
             spread the word!
           </p>
@@ -224,9 +224,9 @@ function SuccessPageContent() {
       </div>
 
       {/* Contact Support */}
-      <div className="mt-12 p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
+      <div className="mt-12 p-6 bg-gray-50 rounded-lg">
         <h3 className="font-semibold mb-2">Need Help?</h3>
-        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+        <p className="text-sm text-gray-600 mb-4">
           If you have any questions about your order, feel free to contact our
           support team.
         </p>

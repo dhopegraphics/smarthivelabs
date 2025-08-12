@@ -92,7 +92,7 @@ export default function ProductPage({ params }: ProductPageProps) {
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Product Images */}
         <div className="space-y-4">
-          <div className="aspect-square bg-neutral-100 dark:bg-neutral-800 rounded-xl overflow-hidden">
+          <div className="aspect-square bg-gray-50 rounded-xl overflow-hidden">
             <Image
               src={product.images[selectedImage]}
               alt={product.name}
@@ -118,7 +118,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                 className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-colors ${
                   selectedImage === index
                     ? "border-blue-500"
-                    : "border-neutral-200 dark:border-neutral-700"
+                    : "border-gray-200"
                 }`}
               >
                 <Image
@@ -156,14 +156,14 @@ export default function ProductPage({ params }: ProductPageProps) {
                   />
                 ))}
               </div>
-              <span className="text-sm text-neutral-600 dark:text-neutral-400">
+              <span className="text-sm text-gray-600">
                 (4.8) • 127 reviews
               </span>
             </div>
             <p className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-4">
               GH₵ {product.price.toFixed(2)}
             </p>
-            <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               {product.description}
             </p>
           </div>
@@ -210,7 +210,7 @@ export default function ProductPage({ params }: ProductPageProps) {
               ))}
             </div>
             {selectedColorObj && (
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">
+              <p className="text-sm text-gray-600 mt-1">
                 Selected: {selectedColorObj.name}
               </p>
             )}
@@ -268,7 +268,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                   <Truck className="h-5 w-5 text-blue-500" />
                   <div>
                     <p className="font-medium">Free Shipping within Ghana</p>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <p className="text-sm text-gray-600">
                       On orders over GH₵ 100
                     </p>
                   </div>
@@ -277,7 +277,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                   <Shield className="h-5 w-5 text-green-500" />
                   <div>
                     <p className="font-medium">Quality Guarantee</p>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <p className="text-sm text-gray-600">
                       30-day return policy
                     </p>
                   </div>
@@ -286,7 +286,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                   <RotateCcw className="h-5 w-5 text-purple-500" />
                   <div>
                     <p className="font-medium">Easy Returns</p>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                    <p className="text-sm text-gray-600">
                       Hassle-free returns within 30 days
                     </p>
                   </div>

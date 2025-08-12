@@ -113,7 +113,7 @@ export default function EntryLevel() {
         <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-400 dark:to-violet-400">
           Entry-Level Positions
         </h1>
-        <p className="text-lg text-neutral-700 dark:text-neutral-300 max-w-3xl mx-auto mb-8">
+        <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
           Start your professional journey with Smart Hive Labs. We typically
           offer positions for early-career professionals across various
           technology disciplines.
@@ -144,7 +144,7 @@ export default function EntryLevel() {
         <h2 className="text-3xl font-bold mb-6 text-center">
           When Available: Our Entry-Level Tracks
         </h2>
-        <p className="text-center text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl mx-auto">
+        <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
           These are the types of entry-level positions we typically offer. Check
           back later for openings in these areas.
         </p>
@@ -164,11 +164,11 @@ export default function EntryLevel() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+                <p className="text-gray-700 mb-4">
                   {track.description}
                 </p>
                 <div className="mb-4">
-                  <h4 className="font-medium mb-2 text-sm uppercase text-neutral-500 dark:text-neutral-400">
+                  <h4 className="font-medium mb-2 text-sm uppercase text-gray-500">
                     Required Skills
                   </h4>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -184,10 +184,10 @@ export default function EntryLevel() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-medium mb-2 text-sm uppercase text-neutral-500 dark:text-neutral-400">
+                  <h4 className="font-medium mb-2 text-sm uppercase text-gray-500">
                     Key Responsibilities
                   </h4>
-                  <ul className="space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <ul className="space-y-1 text-gray-700">
                     {track.responsibilities.map((responsibility, index) => (
                       <li key={index} className="flex items-start">
                         <Check className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
@@ -213,7 +213,7 @@ export default function EntryLevel() {
               <Rocket className="h-6 w-6" />
             </div>
             <h3 className="text-xl font-bold mb-2">Passion for Technology</h3>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               We value individuals who are genuinely excited about technology
               and eager to contribute to innovative solutions.
             </p>
@@ -224,7 +224,7 @@ export default function EntryLevel() {
               <ScreenShare className="h-6 w-6" />
             </div>
             <h3 className="text-xl font-bold mb-2">Willingness to Learn</h3>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Technology evolves rapidly. We seek team members who embrace
               continuous learning and adapt to new challenges.
             </p>
@@ -235,7 +235,7 @@ export default function EntryLevel() {
               <PanelLeftClose className="h-6 w-6" />
             </div>
             <h3 className="text-xl font-bold mb-2">Collaborative Mindset</h3>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Our best work happens together. We look for people who communicate
               effectively and thrive in team environments.
             </p>
@@ -271,7 +271,7 @@ export default function EntryLevel() {
               <Briefcase className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3 mt-1" />
               <div>
                 <h3 className="font-bold text-lg mb-1">Hybrid Work Model</h3>
-                <p className="text-neutral-700 dark:text-neutral-300">
+                <p className="text-gray-700">
                   Flexibility to work from home with regular in-office
                   collaboration days.
                 </p>
@@ -281,7 +281,7 @@ export default function EntryLevel() {
               <Clock className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3 mt-1" />
               <div>
                 <h3 className="font-bold text-lg mb-1">Work-Life Balance</h3>
-                <p className="text-neutral-700 dark:text-neutral-300">
+                <p className="text-gray-700">
                   We respect your time and promote a healthy balance between
                   professional and personal life.
                 </p>
@@ -291,7 +291,7 @@ export default function EntryLevel() {
               <BellRing className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-3 mt-1" />
               <div>
                 <h3 className="font-bold text-lg mb-1">Career Growth</h3>
-                <p className="text-neutral-700 dark:text-neutral-300">
+                <p className="text-gray-700">
                   Regular skill development workshops, mentoring, and
                   advancement opportunities.
                 </p>
@@ -330,7 +330,7 @@ export default function EntryLevel() {
       {/* Alternative Paths */}
       <section className="mb-12 text-center">
         <h2 className="text-3xl font-bold mb-6">Explore Other Opportunities</h2>
-        <p className="text-neutral-700 dark:text-neutral-300 max-w-3xl mx-auto mb-8">
+        <p className="text-gray-700 max-w-3xl mx-auto mb-8">
           While we&apos;re not currently hiring for entry-level positions, we do
           have other ways you can join our community:
         </p>

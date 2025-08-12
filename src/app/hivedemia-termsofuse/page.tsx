@@ -26,13 +26,13 @@ export default function HivedemiaTermsOfUse() {
           <FileText className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
         </div>
         <h1 className="text-4xl font-bold mb-4">Hivedemia Terms of Use</h1>
-        <p className="text-neutral-600 dark:text-neutral-400">
+        <p className="text-gray-600">
           Last Updated: {currentDate}
         </p>
       </div>
 
       {/* Introduction */}
-      <div className="prose dark:prose-invert max-w-none mb-10">
+      <div className="prose max-w-none mb-10">
         <p className="text-lg">
           Welcome to Hivedemia, your AI-powered academic assistant. By using our
           app, you agree to these Terms of Use:
@@ -52,9 +52,9 @@ export default function HivedemiaTermsOfUse() {
 
         <div className="space-y-3 mb-6">
           <div className="flex items-start">
-            <div className="bg-green-100 dark:bg-green-900/30 p-1 rounded mr-3 mt-0.5">
+            <div className="bg-green-100 bg-green-50 p-1 rounded mr-3 mt-0.5">
               <svg
-                className="h-4 w-4 text-green-600 dark:text-green-400"
+                className="h-4 w-4 text-green-600 text-green-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -67,15 +67,15 @@ export default function HivedemiaTermsOfUse() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Generate quizzes
             </p>
           </div>
 
           <div className="flex items-start">
-            <div className="bg-green-100 dark:bg-green-900/30 p-1 rounded mr-3 mt-0.5">
+            <div className="bg-green-100 bg-green-50 p-1 rounded mr-3 mt-0.5">
               <svg
-                className="h-4 w-4 text-green-600 dark:text-green-400"
+                className="h-4 w-4 text-green-600 text-green-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -88,15 +88,15 @@ export default function HivedemiaTermsOfUse() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Summarize academic materials
             </p>
           </div>
 
           <div className="flex items-start">
-            <div className="bg-green-100 dark:bg-green-900/30 p-1 rounded mr-3 mt-0.5">
+            <div className="bg-green-100 bg-green-50 p-1 rounded mr-3 mt-0.5">
               <svg
-                className="h-4 w-4 text-green-600 dark:text-green-400"
+                className="h-4 w-4 text-green-600 text-green-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -109,15 +109,15 @@ export default function HivedemiaTermsOfUse() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Solve problems through Snap & Solve
             </p>
           </div>
 
           <div className="flex items-start">
-            <div className="bg-green-100 dark:bg-green-900/30 p-1 rounded mr-3 mt-0.5">
+            <div className="bg-green-100 bg-green-50 p-1 rounded mr-3 mt-0.5">
               <svg
-                className="h-4 w-4 text-green-600 dark:text-green-400"
+                className="h-4 w-4 text-green-600 text-green-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -130,14 +130,14 @@ export default function HivedemiaTermsOfUse() {
                 />
               </svg>
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Organize study resources
             </p>
           </div>
         </div>
 
-        <div className="bg-neutral-100 dark:bg-neutral-800 p-4 rounded-lg">
-          <p className="text-neutral-700 dark:text-neutral-300">
+        <div className="bg-gray-50 p-4 rounded-lg">
+          <p className="text-gray-700">
             The app is for educational support only and does not guarantee
             academic success.
           </p>
@@ -160,7 +160,7 @@ export default function HivedemiaTermsOfUse() {
             <div className="bg-indigo-100 dark:bg-indigo-900/30 p-1 rounded mr-3 mt-0.5">
               <CheckSquare className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Use the app for lawful, educational purposes only
             </p>
           </div>
@@ -169,7 +169,7 @@ export default function HivedemiaTermsOfUse() {
             <div className="bg-indigo-100 dark:bg-indigo-900/30 p-1 rounded mr-3 mt-0.5">
               <CheckSquare className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Not misuse AI features for unethical academic conduct (e.g.,
               cheating)
             </p>
@@ -179,7 +179,7 @@ export default function HivedemiaTermsOfUse() {
             <div className="bg-indigo-100 dark:bg-indigo-900/30 p-1 rounded mr-3 mt-0.5">
               <CheckSquare className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
             </div>
-            <p className="text-neutral-700 dark:text-neutral-300">
+            <p className="text-gray-700">
               Not upload harmful, illegal, or offensive content
             </p>
           </div>
@@ -201,12 +201,12 @@ export default function HivedemiaTermsOfUse() {
           <h2 className="text-2xl font-bold">3. AI-Generated Content</h2>
         </div>
 
-        <p className="mb-4 text-neutral-700 dark:text-neutral-300">
+        <p className="mb-4 text-gray-700">
           Hivedemia uses AI to provide suggestions, summaries, or quiz
           questions. AI results:
         </p>
 
-        <ul className="list-disc pl-6 space-y-3 text-neutral-700 dark:text-neutral-300 mb-6">
+        <ul className="list-disc pl-6 space-y-3 text-gray-700 mb-6">
           <li>Are generated based on your inputs</li>
           <li>May not always be 100% accurate</li>
           <li>Should be reviewed and used at your own discretion</li>
@@ -228,7 +228,7 @@ export default function HivedemiaTermsOfUse() {
           <h2 className="text-2xl font-bold">4. Account & Data</h2>
         </div>
 
-        <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+        <p className="text-gray-700 mb-4">
           You may need an account to access some features. You are responsible
           for keeping your account secure.
         </p>
@@ -253,12 +253,12 @@ export default function HivedemiaTermsOfUse() {
           <h2 className="text-2xl font-bold">5. Limitation of Liability</h2>
         </div>
 
-        <p className="mb-4 text-neutral-700 dark:text-neutral-300">
+        <p className="mb-4 text-gray-700">
           Hivedemia provides tools &quot;as-is&quot; without guarantees. We are
           not responsible for:
         </p>
 
-        <ul className="list-disc pl-6 space-y-3 text-neutral-700 dark:text-neutral-300">
+        <ul className="list-disc pl-6 space-y-3 text-gray-700">
           <li>Loss of academic materials</li>
           <li>Incorrect AI-generated suggestions</li>
           <li>Damages resulting from misuse of the app</li>
@@ -274,7 +274,7 @@ export default function HivedemiaTermsOfUse() {
           <h2 className="text-2xl font-bold">6. Termination</h2>
         </div>
 
-        <p className="text-neutral-700 dark:text-neutral-300">
+        <p className="text-gray-700">
           We may suspend access if you violate these Terms or misuse the
           platform.
         </p>
@@ -289,7 +289,7 @@ export default function HivedemiaTermsOfUse() {
           <h2 className="text-2xl font-bold">7. Changes to Terms</h2>
         </div>
 
-        <p className="text-neutral-700 dark:text-neutral-300">
+        <p className="text-gray-700">
           We may update these Terms as needed. Continued use means you accept
           updates.
         </p>
@@ -304,7 +304,7 @@ export default function HivedemiaTermsOfUse() {
           <h2 className="text-2xl font-bold">8. Contact</h2>
         </div>
 
-        <p className="mb-6 text-neutral-700 dark:text-neutral-300">
+        <p className="mb-6 text-gray-700">
           For questions:
         </p>
 
