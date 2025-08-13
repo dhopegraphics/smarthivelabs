@@ -157,12 +157,12 @@ export default function Footer() {
                   href="mailto:hello@smarthivelabs.dev"
                   className="hover:text-primary transition-colors"
                 >
-                  hello@smarthivelabs.dev
+                  support@smarthivelabs.dev
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-gray-600">
                 <Phone size={16} className="text-primary" />
-                <span>+1 (555) 123-4567</span>
+                <span>+233 (59) 795-9032</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-600">
                 <MapPin size={16} className="text-primary" />
