@@ -16,6 +16,7 @@ import {
   Shield,
   FileTerminal,
   ArrowRight,
+  UserX,
 } from "lucide-react";
 
 export default function Hivedemia() {
@@ -129,9 +130,7 @@ export default function Hivedemia() {
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">
-                  {feature.description}
-                </p>
+                <p className="text-gray-600">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -288,15 +287,21 @@ export default function Hivedemia() {
       <section className="text-center">
         <div className="inline-flex flex-col sm:flex-row gap-4">
           <Button variant="outline" className="flex items-center" asChild>
-            <Link href="/privacy-policy">
+            <Link href="/hivedemia-privacy">
               <Shield className="mr-2 h-5 w-5" />
               Privacy Policy
             </Link>
           </Button>
           <Button variant="outline" className="flex items-center" asChild>
-            <Link href="/terms-of-use">
+            <Link href="/hivedemia-termsofuse">
               <FileTerminal className="mr-2 h-5 w-5" />
               Terms of Use
+            </Link>
+          </Button>
+          <Button variant="outline" className="flex items-center" asChild>
+            <Link href="/account-deletion">
+              <UserX className="mr-2 h-5 w-5" />
+              Delete Account
             </Link>
           </Button>
         </div>
